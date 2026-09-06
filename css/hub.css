@@ -53,18 +53,19 @@ h1,h2,h3,p{margin:0}
 .map.is-zoomed svg{overflow:hidden}
 .ripple{fill:none;stroke:#FFFFFF;stroke-opacity:.075;stroke-width:1}
 .ripple--far{stroke-opacity:.045}
-.b{fill:none;stroke:#BFE9F0;stroke-opacity:.42;stroke-width:1.6;stroke-linecap:round;transition:stroke .25s,stroke-opacity .25s,stroke-width .25s}
+.b{fill:none;stroke:#BFE9F0;stroke-opacity:.34;stroke-width:1.6;stroke-linecap:round;transition:stroke .25s,stroke-opacity .25s,stroke-width .25s}
 .b--trunk{stroke-width:2.2}
 svg.lit .b{stroke-opacity:.16}
 svg.lit .b.is-on{stroke:var(--c);stroke-opacity:1;stroke-width:2.4;filter:drop-shadow(0 0 6px var(--c))}
-.sil{fill:#DDEFF3;opacity:.9;transition:opacity .25s,fill .25s,filter .25s;pointer-events:none}
+/* at rest the tree is an introduction, not the content: the silhouettes sit greyed, and light when pointed at */
+.sil{fill:#B9CBD3;opacity:.62;transition:opacity .25s,fill .25s,filter .25s;pointer-events:none}
 svg.lit .sil{opacity:.28}
 svg.lit .sil.is-on{opacity:1;fill:#FFFFFF;filter:drop-shadow(0 0 8px var(--c)) drop-shadow(0 0 22px var(--c))}
 .hot{fill:transparent;cursor:pointer}
 .tip{outline:none;cursor:pointer}
 .tip:focus-visible .hot{stroke:var(--teal);stroke-width:1.5;stroke-dasharray:3 3}
 .tl{
-  font-family:var(--sans);font-size:13.5px;fill:#DCEAF0;dominant-baseline:middle;pointer-events:none;
+  font-family:var(--sans);font-size:13.5px;fill:#B9CBD3;dominant-baseline:middle;pointer-events:none;
   paint-order:stroke;stroke:#082433;stroke-width:4px;stroke-linejoin:round;transition:fill .25s,opacity .25s
 }
 .tl--sub{font-family:var(--mono);font-size:9.5px;fill:var(--chalk-mute);letter-spacing:.08em;text-transform:uppercase}
@@ -177,6 +178,11 @@ body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow
 .back::before{content:"← "}
 .back:hover{color:#fff}
 .lab{margin-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-dim)}
+/* the way into the lab, from a group's card */
+.golab{display:block;margin-top:16px;padding:12px 14px;border-radius:8px;background:var(--c,#BFE9F0);color:#08121A;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:transform .18s,box-shadow .18s;box-shadow:0 0 22px color-mix(in srgb,var(--c,#BFE9F0) 40%,transparent)}
+.golab small{display:block;margin-top:3px;font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:0;text-transform:none;opacity:.8}
+.golab::after{content:" →"}
+.golab:hover{transform:translateY(-1px);box-shadow:0 0 30px color-mix(in srgb,var(--c,#BFE9F0) 60%,transparent)}
 .lab a{color:var(--green);border-bottom:1px solid rgba(74,222,128,.4)}
 .steps{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:2px}
 .steps button{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:5px 8px;border-radius:6px;transition:background .18s}
