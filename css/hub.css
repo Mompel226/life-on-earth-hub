@@ -239,6 +239,8 @@ body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow
   background:linear-gradient(160deg,#12475A,#05161F);border:1px solid rgba(94,234,212,.55);box-shadow:inset 0 0 0 1px rgba(0,0,0,.35),2px 2px 0 rgba(0,0,0,.35);
   font-family:var(--serif);font-size:9.5px;line-height:1.12;color:var(--chalk)
 }
+.book__cover--img{padding:0;border:0;background:none;min-height:0;width:74px;box-shadow:2px 2px 0 rgba(0,0,0,.35)}
+.book__cover--img picture,.book__cover--img img{display:block;width:100%;height:auto;border-radius:2px}
 .book__cover small{display:block;margin-top:5px;font-family:var(--mono);font-size:7px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
 .book__txt{min-width:0;font-size:12.5px;line-height:1.45;color:#DCEAF0}
 .book__eyebrow{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--chalk-dim)}
