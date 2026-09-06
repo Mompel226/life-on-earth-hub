@@ -21,6 +21,7 @@
    story    the five steps from the vent to the first cell
    img      the picture on a step: base name in assets/photos/ (900 and 1400 wide, JPEG + WebP), alt, caption, credit, page
      book    true on a step that shows the book card
+     evidence  for and against each idea, one line and one source per item; evidenceNote closes it
    book     the book itself: title, author, year, one line, where it lives
    ============================================================ */
 window.TREE = {
@@ -149,7 +150,7 @@ window.TREE = {
     { n:1, title:'The vent', chip:'Water · the medium for life',
       icon:'<path d="M-5 8 L-2 -7 L2 -7 L5 8 Z"/><path d="M0 -9 c0 -3 2 -4 2 -7 M-3 -10 c0 -2 1 -3 1 -5"/>',
       text:'Four billion years ago the sea floor leaks warm water through rock full of tiny holes. It is warm, not boiling; alkaline, not acidic; and rich in hydrogen, made below the sea floor where seawater reacts with the rock and carried up by the vent. Nothing is alive yet.',
-      real:'Lost City, in the Atlantic, is the living example: white chimneys 800 metres down, still venting today. The reaction that makes the hydrogen is called serpentinisation: iron in the rock takes the oxygen from water and leaves H₂.',
+      real:'Lost City, in the Atlantic, is the living example: white chimneys 800 metres down, still venting today. The reaction that makes the hydrogen is called serpentinisation: iron in the rock takes the oxygen from water and leaves H₂. The evidence for and against this idea, and the rival one, is on step 5.',
       img:{ base:'assets/photos/lost-city', alt:'White carbonate chimneys of the Lost City vent field, lit by a submersible in the dark',
             caption:'Lost City vent field, 750–900 m down', credit:'Ifremer, ROV Victor 6000, 2005 · CC BY 4.0',
             url:'https://commons.wikimedia.org/wiki/File:Massif_de_chemin%C3%A9es_carbonat%C3%A9es_(Ifremer_00569-68094_-_25275).jpg' },
@@ -188,15 +189,35 @@ window.TREE = {
     { n:5, title:'The first cell', chip:'The seven characteristics · 1.1',
       icon:'<circle cx="0" cy="0" r="8"/><path d="M-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0"/><circle cx="-4.5" cy="-3" r=".9" fill="currentColor"/><circle cx="4" cy="3.5" r=".9" fill="currentColor"/>',
       text:'Every living thing descends from one population of cells, LUCA, about 4.2 billion years ago. It lived on hydrogen and carbon dioxide, with DNA, proteins and a membrane. It fed, respired, grew, reproduced, excreted and responded: alive by the seven tests of 1.1.',
-      real:'This is one of two leading ideas, not a settled fact. The vent idea starts from biology: the oldest cells we can reconstruct lived on hydrogen and carbon dioxide, which is exactly what these vents supply. The other starts from chemistry: the parts of RNA are easier to make in shallow pools on land that dry out and refill in sunlight. Neither has yet done everything the other can, and both are still being tested. Everyone agrees on this much: life began in water, chemistry came before cells, and every organism shares the DNA code. That shared code is why differences in DNA show how closely two groups are related, which is what the branches of this tree mean.',
+      real:'This is one of two leading ideas, not a settled fact. The vent idea starts from biology; the rival idea, pools on land that dry out and refill in sunlight, starts from chemistry. The evidence for and against each is below. Everyone agrees on this much: life began in water, chemistry came before cells, and every organism shares the DNA code. That shared code is why differences in DNA show how closely two groups are related, which is what the branches of this tree mean.',
       img:{ base:'assets/photos/first-cell', alt:'A painting of the last universal common ancestor: a cell with a membrane, DNA being pulled apart as it divides, and proteins',
             caption:'LUCA, dividing: a membrane, DNA, proteins', credit:'Illustration by David S. Goodsell, RCSB Protein Data Bank · CC BY 4.0',
             url:'https://pdb101.rcsb.org/sci-art/goodsell-gallery/last-universal-common-ancestor' },
       book:true,
-      reads:[ { t:'LUCA at 4.2 billion years, Moody et al. 2024', url:'https://www.nature.com/articles/s41559-024-02474-w' },
-              { t:'The parts of RNA from cyanide chemistry in sunlight, Sutherland lab 2015', url:'https://www.nature.com/articles/nchem.2202' },
-              { t:'The case for hot springs on land, 2026', url:'https://news.ucsc.edu/2026/05/special-issue-of-astrobiology/' },
-              { t:'Sparks in water sprays, Stanford 2025', url:'https://news.stanford.edu/stories/2025/03/microlightning-in-water-droplets-may-have-sparked-life-on-earth' } ] }
+      evidence:[
+        { side:'Deep-sea alkaline vents',
+          for:[
+            { t:'The oldest cells we can reconstruct lived on hydrogen and carbon dioxide with no oxygen: a vent\'s diet.', s:'Moody et al., Nature Ecology & Evolution 2024', url:'https://www.nature.com/articles/s41559-024-02474-w' },
+            { t:'In a reactor with a vent\'s gradients, CO₂ turned into formate and acetate on iron–sulfur minerals, with no enzymes.', s:'Ferreira et al., JACS 2025', url:'https://phys.org/news/2025-10-underwater-thermal-vents-molecular-precursors.html' },
+            { t:'Fatty acids close into vesicles in hot, alkaline, salty water.', s:'Jordan et al., Nature Ecology & Evolution 2019', url:'https://www.nature.com/articles/s41559-019-1015-y' },
+            { t:'Rust chimneys grown in the laboratory pull RNA out of the water and hold it a thousand times more concentrated.', s:'Helmbrecht et al., Geobiology 2023', url:'https://onlinelibrary.wiley.com/doi/10.1111/gbi.12572' } ],
+          against:[
+            { t:'Lost City\'s water is only strongly alkaline once it has cooled; at depth its pH is close to seawater, so the gradient the idea runs on is weaker than claimed.', s:'Tutolo, Goldschmidt 2025', url:'https://goldschmidtabstracts.info/2025/30191.pdf' },
+            { t:'Modelled, the gradient across a chimney wall is too small and too short-lived to power anything.', s:'Jackson, J. Mol. Evol. 2016', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4999464/' },
+            { t:'Nobody has yet made the parts of RNA under vent conditions, and the two camps disagree on whether it can be done.', s:'Knowable Magazine 2020, both sides', url:'https://knowablemagazine.org/content/article/physical-world/2020/searching-high-and-low-origins-life' } ] },
+        { side:'Pools on land that dry out and refill',
+          for:[
+            { t:'One network of cyanide chemistry, driven by sunlight, makes the parts of RNA, proteins and lipids together, in shallow water.', s:'Patel et al., Nature Chemistry 2015', url:'https://www.nature.com/articles/nchem.2202' },
+            { t:'Drying joins RNA\'s parts into chains and packs them into vesicles; refilling sets them free. A hot spring does this every day.', s:'Damer & Deamer, Astrobiology 2020', url:'https://doi.org/10.1089/ast.2019.2045' },
+            { t:'Sparks between droplets in a spray of water make the bases of RNA from simple gases; no lightning needed.', s:'Zare lab, Science Advances 2025', url:'https://www.science.org/doi/10.1126/sciadv.adt8979' },
+            { t:'A 2026 special issue puts the case for whole landscapes of springs, lakes and crater pools.', s:'Astrobiology, May 2026', url:'https://news.ucsc.edu/2026/05/special-issue-of-astrobiology/' } ],
+          against:[
+            { t:'Pools need land, and the early Earth may have been almost all ocean: 3.2 billion years ago the continents were largely under water.', s:'Johnson & Wing, Nature Geoscience 2020', url:'https://www.nature.com/articles/s41561-020-0538-9' },
+            { t:'The sunlight that drives the chemistry also breaks RNA, and a pool dilutes and washes away what it makes.', s:'Knowable Magazine 2020, both sides', url:'https://knowablemagazine.org/content/article/physical-world/2020/searching-high-and-low-origins-life' },
+            { t:'The oldest cells look like vent dwellers, not pool dwellers: they lived on hydrogen and carbon dioxide in the dark.', s:'Weiss et al., Nature Microbiology 2016', url:'https://www.nature.com/articles/nmicrobiol2016116' } ] } ],
+      evidenceNote:'A hot spring is a hydrothermal system on land, with the rock, the heat and the gradients of a vent and the drying of a pool. The two ideas may meet there.',
+      reads:[ { t:'The parts of RNA from cyanide chemistry in sunlight, Sutherland lab 2015', url:'https://www.nature.com/articles/nchem.2202' },
+              { t:'LUCA at 4.2 billion years, Moody et al. 2024', url:'https://www.nature.com/articles/s41559-024-02474-w' } ] }
   ],
 
   /* the book behind the story — a typeset card, not the cover, which is the publisher's */
