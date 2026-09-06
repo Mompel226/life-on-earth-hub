@@ -59,6 +59,17 @@ is presented as one. Each step on the page links to what it rests on; this is th
 | 5 | LUCA about 4.2 billion years ago; an anaerobic acetogen living on H₂ and CO₂, with DNA, proteins, a membrane | [Moody et al., *Nature Ecology & Evolution* 2024](https://www.nature.com/articles/s41559-024-02474-w) |
 | 5 | The rival ideas: hot springs on land with wet–dry cycles; sparks in water sprays | [UCSC, *Astrobiology* special issue, May 2026](https://news.ucsc.edu/2026/05/special-issue-of-astrobiology/); [Stanford, *Science Advances*, March 2025](https://news.stanford.edu/stories/2025/03/microlightning-in-water-droplets-may-have-sparked-life-on-earth) |
 | 5 | The critique: Lost City's in-situ pH is close to seawater, so proton gradients were weaker than the hypothesis needs | [Tutolo, Goldschmidt 2025](https://goldschmidtabstracts.info/2025/30191.pdf) |
+| 5 | The chemistry case for sunlit pools: the parts of RNA, proteins and lipids from one cyanide-based network in UV light | [Patel et al., *Nature Chemistry* 2015](https://www.nature.com/articles/nchem.2202) |
+| 1, 5 | The book behind the story: the vent, the energy problem, and why complex life came late | Nick Lane, *The Vital Question* (Profile / Norton, 2015) — [the author's page](https://nick-lane.net/books/the-vital-question/). The card on the page is typeset, not the cover, which is the publisher's. |
+
+**Where the field stands (September 2026).** There is no agreed setting. Two ideas lead: alkaline
+hydrothermal vents (Russell, Martin, Lane; supported by what the reconstructed LUCA lived on and by
+the 2025 carbon-fixation experiments) and shallow pools on land that dry out and refill in sunlight
+(Sutherland's chemistry; Damer and Deamer's hot springs; the 2026 *Astrobiology* special issue).
+Atmospheric sparks (Miller–Urey, and the 2025 microlightning result) and organic molecules delivered
+from space (the Bennu samples) feed either. Each side has results the other has not matched, and
+each has a standing critique. The page presents the vent story as one of two leading ideas and says
+where everyone agrees.
 
 The class deck's diagram of the vent pores (Understanding Evolution, UC Museum of Paleontology)
 is copyright UCMP and AAAS and licensed for classroom use only. It is **not** used here.
