@@ -19,7 +19,7 @@
      sil       the silhouette: file in assets/silhouettes/, the organism, who drew it, licence, page
    viruses  off the tree, on purpose
    story    the five steps from the vent to the first cell
-   photo    the one photograph
+   img      the picture on a step: base name in assets/photos/ (900 and 1400 wide, JPEG + WebP), alt, caption, credit, page
    ============================================================ */
 window.TREE = {
 
@@ -148,7 +148,9 @@ window.TREE = {
       icon:'<path d="M-5 8 L-2 -7 L2 -7 L5 8 Z"/><path d="M0 -9 c0 -3 2 -4 2 -7 M-3 -10 c0 -2 1 -3 1 -5"/>',
       text:'Four billion years ago the sea floor leaks warm water through rock full of tiny holes. It is warm, not boiling; alkaline, not acidic; and full of hydrogen. Nothing is alive yet.',
       real:'Lost City, in the Atlantic, is the living example: white chimneys 800 metres down, still venting today.',
-      fig:'photo',
+      img:{ base:'assets/photos/lost-city', alt:'White carbonate chimneys of the Lost City vent field, lit by a submersible in the dark',
+            caption:'Lost City vent field, 750–900 m down', credit:'Ifremer, ROV Victor 6000, 2005 · CC BY 4.0',
+            url:'https://commons.wikimedia.org/wiki/File:Massif_de_chemin%C3%A9es_carbonat%C3%A9es_(Ifremer_00569-68094_-_25275).jpg' },
       reads:[ { t:'Lost City, the vent field itself', url:'https://en.wikipedia.org/wiki/Lost_City_Hydrothermal_Field' },
               { t:'The hydrothermal vent hypothesis, Understanding Evolution', url:'https://evolution.berkeley.edu/the-origin-of-life/the-hydrothermal-vent-hypothesis/' } ] },
 
@@ -156,21 +158,27 @@ window.TREE = {
       icon:'<circle cx="-5" cy="3" r="3"/><circle cx="5" cy="3" r="3"/><circle cx="0" cy="-5" r="3"/><path d="M-3 1 L-1 -3 M3 1 L1 -3"/>',
       text:'Carbon dioxide in the seawater meets hydrogen from the rock. Metal minerals in the walls speed the reaction, the job enzymes do in you. Small carbon molecules form: the pieces of the carbohydrates, fats and proteins you meet in Topic 4.',
       real:'In 2025 a laboratory made the first of these molecules from CO₂ and H₂ on iron–sulfur minerals, with no enzymes at all.',
-      fig:'<svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono,monospace" font-size="9" fill="#9FB6C4"><rect width="320" height="130" fill="#071A24"/><g fill="#5B6E76" stroke="#8FA3AB" stroke-width="1"><path d="M40 70 l18 -10 l18 10 l-18 10z"/><path d="M58 60 v20 l18 10 v-20z" fill="#485A62"/><path d="M40 70 v20 l18 10 v-20z" fill="#3D4E56"/></g><text x="30" y="114">metal mineral · a catalyst</text><g fill="none" stroke="#8AD8FF" stroke-width="1.4"><circle cx="150" cy="36" r="6"/><circle cx="138" cy="36" r="4"/><circle cx="162" cy="36" r="4"/></g><text x="136" y="58" fill="#8AD8FF">CO₂</text><g fill="none" stroke="#F6C77A" stroke-width="1.4"><circle cx="150" cy="86" r="4"/><circle cx="160" cy="86" r="4"/></g><text x="146" y="106" fill="#F6C77A">H₂</text><path d="M178 60 h36" stroke="#DCEAF0" stroke-width="1.2"/><path d="M212 56 l6 4 l-6 4" fill="none" stroke="#DCEAF0" stroke-width="1.2"/><g fill="none" stroke="#FFD48A" stroke-width="1.4"><path d="M236 44 l10 -6 l10 6 l-10 6z"/><path d="M262 70 l8 -8 l8 8"/><path d="M234 84 h28"/><circle cx="292" cy="56" r="5"/></g><text x="216" y="114" fill="#FFD48A">small carbon molecules</text></svg>',
+      img:{ base:'assets/photos/building-blocks', alt:'A painting of mineral rods with small molecules and short chains forming on their surfaces',
+            caption:'Minerals as scaffolds: small molecules join into chains on their surfaces', credit:'Illustration by David S. Goodsell, RCSB Protein Data Bank · CC BY 4.0',
+            url:'https://pdb101.rcsb.org/sci-art/goodsell-gallery/abiogenesis' },
       reads:[ { t:'CO₂ to formate and acetate on iron–sulfur minerals, 2025', url:'https://phys.org/news/2025-10-underwater-thermal-vents-molecular-precursors.html' } ] },
 
     { n:3, title:'The bag', chip:'Fats · Topic 4',
       icon:'<circle cx="0" cy="0" r="8"/><circle cx="0" cy="0" r="4.5" stroke-dasharray="1.6 1.6"/>',
       text:'A fatty acid has a head that likes water and a tail that does not. In water they line up and close into a bubble. That bubble is a membrane, and inside it chemistry stays together.',
       real:'Shown in the laboratory in hot, alkaline, salty water in 2019. The membranes in every cell today use the same trick, with two tails on each molecule.',
-      fig:'<svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono,monospace" font-size="9" fill="#9FB6C4"><rect width="320" height="130" fill="#071A24"/><g id="fa"><circle cx="0" cy="0" r="4" fill="#8AD8FF"/><path d="M0 4 q3 6 0 12 q-3 6 0 12" stroke="#F6C77A" stroke-width="1.6" fill="none"/></g><use href="#fa" x="34" y="30"/><use href="#fa" x="52" y="30"/><use href="#fa" x="70" y="30"/><text x="24" y="86">head · tail</text><g transform="translate(220 64)"><circle r="42" fill="none" stroke="#F6C77A" stroke-width="1" opacity=".5"/><g fill="#8AD8FF"><circle cx="0" cy="-44" r="3"/><circle cx="31" cy="-31" r="3"/><circle cx="44" cy="0" r="3"/><circle cx="31" cy="31" r="3"/><circle cx="0" cy="44" r="3"/><circle cx="-31" cy="31" r="3"/><circle cx="-44" cy="0" r="3"/><circle cx="-31" cy="-31" r="3"/><circle cx="0" cy="-24" r="3"/><circle cx="17" cy="-17" r="3"/><circle cx="24" cy="0" r="3"/><circle cx="17" cy="17" r="3"/><circle cx="0" cy="24" r="3"/><circle cx="-17" cy="17" r="3"/><circle cx="-24" cy="0" r="3"/><circle cx="-17" cy="-17" r="3"/></g><circle r="34" fill="none" stroke="#F6C77A" stroke-width="7" opacity=".55"/><text x="-30" y="4" fill="#FFD48A">chemistry in</text></g><text x="150" y="122">a membrane closes into a bubble</text></svg>',
+      img:{ base:'assets/photos/the-bag', alt:'A painting of a membrane closing into a bubble around strands of RNA',
+            caption:'A membrane closes into a bubble round strands of RNA', credit:'Illustration by David S. Goodsell, RCSB Protein Data Bank · CC BY 4.0',
+            url:'https://pdb101.rcsb.org/sci-art/goodsell-gallery/abiogenesis' },
       reads:[ { t:'Vesicles form under vent conditions, Jordan et al. 2019', url:'https://www.nature.com/articles/s41559-019-1015-y' } ] },
 
     { n:4, title:'The copier', chip:'DNA · Topic 4, Supplement',
       icon:'<path d="M-8 -6 C -4 -6, -4 6, 0 6 S 4 -6, 8 -6"/><path d="M-8 6 C -4 6, -4 -6, 0 -6 S 4 6, 8 6"/>',
       text:'Something has to copy itself. The best candidate is RNA, which both stores information and speeds up reactions. Later DNA takes over the storing: two strands, A with T and C with G, the same code in every living thing.',
       real:'Nobody has yet made an RNA that copies itself unaided. The closest, published in 2026, copies its partner strand and then itself in two separate steps.',
-      fig:'<svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono,monospace" font-size="9" fill="#9FB6C4"><rect width="320" height="130" fill="#071A24"/><path d="M20 40 C 50 20, 70 60, 100 40 S 150 20, 180 40" fill="none" stroke="#FFD48A" stroke-width="2"/><g stroke="#8AD8FF" stroke-width="2"><path d="M40 33 v-14 M70 46 v14 M100 40 v-14 M130 32 v-14 M160 44 v14"/></g><text x="20" y="80" fill="#FFD48A">RNA · one strand · copies itself</text><g transform="translate(210 0)"><path d="M10 100 C 30 80, 50 120, 70 100 S 110 80, 100 100" fill="none" stroke="#DCEAF0" stroke-width="1.6"/><path d="M10 120 C 30 140, 50 100, 70 120 S 110 140, 100 120" fill="none" stroke="#DCEAF0" stroke-width="1.6"/><g stroke="#8EE6A2" stroke-width="1.6"><path d="M25 96 v24 M40 90 v40 M55 100 v20 M70 100 v20 M85 92 v36"/></g></g><text x="216" y="70" fill="#DCEAF0">DNA · two strands</text><text x="216" y="82" fill="#8EE6A2">A–T · C–G</text></svg>',
+      img:{ base:'assets/photos/the-copier', alt:'A painting of yellow DNA strands with a turquoise protein filament, RecA, that mends them',
+            caption:'DNA (yellow), with a protein that mends it (turquoise)', credit:'Illustration by David S. Goodsell, RCSB Protein Data Bank · CC BY 4.0',
+            url:'https://pdb101.rcsb.org/sci-art/goodsell-gallery/reca-and-dna' },
       reads:[ { t:'A ribozyme that copies and evolves, Salk Institute 2024', url:'https://www.salk.edu/news-release/modeling-the-origins-of-life-new-evidence-for-an-rna-world/' },
               { t:'QT45, the closest yet to self-copying RNA, 2026', url:'https://www.sciencealert.com/this-rna-almost-self-replicates-which-could-explain-lifes-origins' } ] },
 
@@ -178,14 +186,12 @@ window.TREE = {
       icon:'<circle cx="0" cy="0" r="8"/><path d="M-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0"/><circle cx="-4.5" cy="-3" r=".9" fill="currentColor"/><circle cx="4" cy="3.5" r=".9" fill="currentColor"/>',
       text:'Every living thing descends from one population of cells, LUCA, about 4.2 billion years ago. It lived on hydrogen and carbon dioxide, with DNA, proteins and a membrane. It fed, respired, grew, reproduced, excreted and responded: alive by the seven tests of 1.1.',
       real:'This is the leading idea, not a fact. Others start life in hot springs on land, or in sprays of sea water. Everyone agrees on this much: life began in water, chemistry came before cells, and every organism shares the DNA code. That shared code is why differences in DNA show how closely two groups are related, which is what the branches of this tree mean.',
-      fig:'<svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono,monospace" font-size="9" fill="#9FB6C4"><rect width="320" height="130" fill="#071A24"/><g transform="translate(90 65)"><ellipse rx="64" ry="42" fill="#0E2A36" stroke="#FFD48A" stroke-width="3" opacity=".9"/><path d="M-30 -6 c10 -18 40 -14 44 4 c4 16 -20 26 -38 12 c-10 -8 -12 -10 -6 -16z" fill="none" stroke="#8EE6A2" stroke-width="1.6"/><g fill="#8AD8FF"><circle cx="30" cy="-20" r="2"/><circle cx="-40" cy="14" r="2"/><circle cx="20" cy="24" r="2"/><circle cx="-14" cy="-26" r="2"/></g><g stroke="#DCEAF0" stroke-width="1.2" fill="none"><path d="M64 0 c14 -4 24 4 34 0"/><path d="M-64 6 c-14 4 -24 -4 -34 0"/></g></g><text x="168" y="40" fill="#FFD48A">LUCA · about 4.2 billion years ago</text><text x="168" y="56">a membrane · DNA · proteins</text><text x="168" y="72">lives on H₂ and CO₂</text><text x="168" y="96" fill="#8EE6A2">feeds · respires · grows</text><text x="168" y="108" fill="#8EE6A2">reproduces · excretes · responds</text></svg>',
+      img:{ base:'assets/photos/first-cell', alt:'A painting of the last universal common ancestor: a cell with a membrane, DNA being pulled apart as it divides, and proteins',
+            caption:'LUCA, dividing: a membrane, DNA, proteins', credit:'Illustration by David S. Goodsell, RCSB Protein Data Bank · CC BY 4.0',
+            url:'https://pdb101.rcsb.org/sci-art/goodsell-gallery/last-universal-common-ancestor' },
       reads:[ { t:'LUCA at 4.2 billion years, Moody et al. 2024', url:'https://www.nature.com/articles/s41559-024-02474-w' },
               { t:'The case for hot springs on land, 2026', url:'https://news.ucsc.edu/2026/05/special-issue-of-astrobiology/' },
               { t:'Sparks in water sprays, Stanford 2025', url:'https://news.stanford.edu/stories/2025/03/microlightning-in-water-droplets-may-have-sparked-life-on-earth' } ] }
   ],
 
-  /* the one photograph, on step 1 */
-  photo: { base:'assets/photos/lost-city', alt:'White carbonate chimneys of the Lost City vent field, lit by a submersible in the dark',
-           credit:'Lost City vent field, 750–900 m down · Ifremer, ROV Victor 6000, 2005 · CC BY 4.0',
-           url:'https://commons.wikimedia.org/wiki/File:Massif_de_chemin%C3%A9es_carbonat%C3%A9es_(Ifremer_00569-68094_-_25275).jpg' }
 };

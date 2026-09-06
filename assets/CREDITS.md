@@ -30,11 +30,19 @@ To swap one: drop the new PhyloPic vector in `silhouettes/` under the group's id
 in `silhouettes/manifest.json` and the `sil` record in `js/tree.js`, rewrite its row here, and run
 `python3 tools/inline-silhouettes.py`.
 
-## The photograph
+## The pictures on the story
 
-| Where | File | Source | Licence |
+Step 1 is a photograph; steps 2 to 5 are paintings by David S. Goodsell from the RCSB Protein
+Data Bank's Goodsell Gallery, which the RCSB releases under CC BY 4.0. Each is shown cropped,
+at 900 and 1400 px wide, JPEG and WebP; the crops are cut from the TIFFs the gallery serves.
+
+| Step | File | Source | Licence |
 |---|---|---|---|
-| Step 1, the vent | `photos/lost-city-*` | **Massif of carbonate chimneys at the Lost City hydrothermal site**, 750–900 m deep, photographed by the ROV *Victor 6000*, Ifremer, 2005. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Massif_de_chemin%C3%A9es_carbonat%C3%A9es_(Ifremer_00569-68094_-_25275).jpg). Shown cropped, at 900 and 1400 px, JPEG and WebP. | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 1 · The vent | `photos/lost-city-*` | **Massif of carbonate chimneys at the Lost City hydrothermal site**, 750–900 m deep, photographed by the ROV *Victor 6000*, Ifremer, 2005. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Massif_de_chemin%C3%A9es_carbonat%C3%A9es_(Ifremer_00569-68094_-_25275).jpg). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 2 · The building blocks | `photos/building-blocks-*` | **Abiogenesis** (2018), the lower left: minerals as scaffolds, small molecules joining into chains. Illustration by David S. Goodsell, RCSB Protein Data Bank, [doi 10.2210/rcsb_pdb/goodsell-gallery-034](https://pdb101.rcsb.org/sci-art/goodsell-gallery/abiogenesis). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 3 · The bag | `photos/the-bag-*` | **Abiogenesis** (2018), the upper right: a membrane closing into a vesicle round RNA. Same painting and credit. | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 4 · The copier | `photos/the-copier-*` | **RecA and DNA** (2021): DNA in yellow, the RecA repair protein in turquoise. Illustration by David S. Goodsell, RCSB Protein Data Bank, [doi 10.2210/rcsb_pdb/goodsell-gallery-038](https://pdb101.rcsb.org/sci-art/goodsell-gallery/reca-and-dna). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 5 · The first cell | `photos/first-cell-*` | **Last Universal Common Ancestor** (2018): the primordial cell dividing, its DNA pulled apart, a glycolipid wall. Illustration by David S. Goodsell, RCSB Protein Data Bank, [doi 10.2210/rcsb_pdb/goodsell-gallery-035](https://pdb101.rcsb.org/sci-art/goodsell-gallery/last-universal-common-ancestor). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 
 ## What the story rests on
 
@@ -53,5 +61,4 @@ is presented as one. Each step on the page links to what it rests on; this is th
 | 5 | The critique: Lost City's in-situ pH is close to seawater, so proton gradients were weaker than the hypothesis needs | [Tutolo, Goldschmidt 2025](https://goldschmidtabstracts.info/2025/30191.pdf) |
 
 The class deck's diagram of the vent pores (Understanding Evolution, UC Museum of Paleontology)
-is copyright UCMP and AAAS and licensed for classroom use only. It is **not** used here; the
-drawings on the page were drawn for it.
+is copyright UCMP and AAAS and licensed for classroom use only. It is **not** used here.

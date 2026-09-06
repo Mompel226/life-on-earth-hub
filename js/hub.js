@@ -294,14 +294,16 @@
     wireCard();
   }
 
+  function picture(img) {
+    var ws = img.widths || [900, 1400], b = img.base;
+    var set = function (ext) { return ws.map(function (w) { return b + '-' + w + '.' + ext + ' ' + w + 'w'; }).join(', '); };
+    return '<figure class="fig"><picture>' +
+      '<source type="image/webp" srcset="' + set('webp') + '" sizes="360px">' +
+      '<img src="' + b + '-' + ws[0] + '.jpg" srcset="' + set('jpg') + '" sizes="360px" alt="' + esc(img.alt) + '" loading="lazy" decoding="async">' +
+      '</picture><figcaption>' + (img.caption ? esc(img.caption) + ' · ' : '') + '<a href="' + esc(img.url) + '" target="_blank" rel="noopener">' + esc(img.credit) + '</a></figcaption></figure>';
+  }
   function figFor(s) {
-    if (s.fig === 'photo' && T.photo) {
-      var b = T.photo.base;
-      return '<figure class="fig"><picture>' +
-        '<source type="image/webp" srcset="' + b + '-900.webp 900w, ' + b + '-1400.webp 1400w" sizes="360px">' +
-        '<img src="' + b + '-900.jpg" srcset="' + b + '-900.jpg 900w, ' + b + '-1400.jpg 1400w" sizes="360px" alt="' + esc(T.photo.alt) + '" loading="lazy" decoding="async">' +
-        '</picture><figcaption><a href="' + esc(T.photo.url) + '" target="_blank" rel="noopener">' + esc(T.photo.credit) + '</a></figcaption></figure>';
-    }
+    if (s.img) return picture(s.img);
     return s.fig ? '<div class="fig">' + s.fig + '</div>' : '';
   }
   function lightStory(n, withCard) {
@@ -562,7 +564,7 @@
     var sils = T.groups.filter(function (g) { return g.sil; }).concat(V ? [V] : []);
     cr.innerHTML = 'Silhouettes from <a href="https://www.phylopic.org" target="_blank" rel="noopener">PhyloPic</a>, CC0 or public domain where marked: ' +
       sils.map(function (g) { return '<a href="' + esc(g.sil.url) + '" target="_blank" rel="noopener">' + esc(g.label.toLowerCase()) + '</a> by ' + esc(g.sil.by) + (/public/i.test(g.sil.licence) ? ' (PD)' : ''); }).join(' · ') +
-      (T.photo ? '. Photograph: <a href="' + esc(T.photo.url) + '" target="_blank" rel="noopener">' + esc(T.photo.credit) + '</a>' : '') +
+      '. Pictures on the story: ' + T.story.filter(function (x) { return x.img; }).map(function (x) { return '<a href="' + esc(x.img.url) + '" target="_blank" rel="noopener">' + esc(x.title.toLowerCase()) + '</a>, ' + esc(x.img.credit); }).join(' · ') +
       '. The story follows the alkaline-vent hypothesis; each step links to what it rests on, and the full list with licences is in <a href="https://github.com/Mompel226/life-on-earth-hub/blob/main/assets/CREDITS.md" target="_blank" rel="noopener">assets/CREDITS.md</a>.';
   }
   var timer;

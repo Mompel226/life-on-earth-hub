@@ -59,9 +59,10 @@ public-domain silhouettes; the credit goes in the colophon by itself, from the r
 ## The story
 
 `story` in `js/tree.js`: five steps, each with the exam words first (`text`), reality after
-(`real`), the Topic 4 molecule it leads to (`chip`), a small drawing (`fig`, inline SVG) or the
-photograph (`fig:'photo'`), and the papers it rests on (`reads`). The drawings are drawn here,
-not copied: the Berkeley diagram the class uses is copyright UCMP and AAAS, for classrooms only.
+(`real`), the Topic 4 molecule it leads to (`chip`), a picture (`img`: a photograph or one of
+David Goodsell's paintings from the RCSB PDB, CC BY 4.0, cropped to the card's shape at 900 and
+1400 px) and the papers it rests on (`reads`). Real pictures, not drawings: the Berkeley diagram
+the class uses is copyright UCMP and AAAS, for classrooms only, so it is not here.
 
 ## Files
 
@@ -72,7 +73,7 @@ js/topics.js                THE TOPIC REGISTER — the file you edit when a lab 
 js/tree.js                  the tree register: groups, features, story, credits
 js/hub.js                   draws the tree, lights it, flies, tours, the card, the audit
 assets/silhouettes/         the sixteen PhyloPic vectors + manifest.json
-assets/photos/              the Lost City photograph, 900 and 1400 px, JPEG and WebP
+assets/photos/              the five story pictures, 900 and 1400 px, JPEG and WebP
 assets/CREDITS.md           every image and every source, with licences
 tools/stamp.mjs             the deploy step: rewrites every ?v= and version.txt from one value
 tools/inline-silhouettes.py re-inlines the silhouettes into index.html
