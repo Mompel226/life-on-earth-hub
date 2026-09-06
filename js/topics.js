@@ -24,7 +24,8 @@ window.TOPICS = [
     title:'Characteristics and classification of living organisms', lab:'Classification Lab',
     ring:'1 · Classification · the whole tree', groups:true,
     blurb:'The seven things every living organism does, the five kingdoms and the groups inside them, and how to make a key that names an organism from what you can see.',
-    status:'build', url:null },
+    detail:'10 stations · 61 questions',
+    status:'live', url:'https://mompel226.github.io/classification-lab/' },
 
   { id:'inheritance',   no:17, year:'Y11', side:'l', sys:'tree', anchor:null,
     title:'Inheritance',            lab:'Inheritance Lab',

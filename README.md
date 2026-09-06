@@ -32,8 +32,8 @@ Topic 1, characteristics and classification, and topics 17–21: inheritance, va
 selection, organisms and their environment, human influences on ecosystems, biotechnology.
 The link at the top of the page goes back up.
 
-Behind this shelf: the **Classification Lab** (Topic 1) is being built; five more labs are
-planned. Every lab links back here with one line — `docs/link-back.md` is the recipe.
+Behind this shelf: the **Classification Lab** (Topic 1) is live, and a group clicked on the tree opens
+it on that group — the hub introduces, the lab teaches. Five more labs are planned. Every lab links back here with one line — `docs/link-back.md` is the recipe.
 
 ## 🧑‍🎓 For your students — there is nothing to set up
 
@@ -45,7 +45,7 @@ planned. Every lab links back here with one line — `docs/link-back.md` is the 
 
 | # | Topic | Lab | |
 |:--:|-------|-----|:--:|
-| 1 | Characteristics and classification of living organisms | Classification Lab | 🟠 being built |
+| 1 | Characteristics and classification of living organisms | [Classification Lab](https://mompel226.github.io/classification-lab/) | 🟢 live |
 | 17 | Inheritance | Inheritance Lab | ⚪ planned |
 | 18 | Variation and selection | Variation & Selection Lab | ⚪ planned |
 | 19 | Organisms and their environment | Ecology Lab | ⚪ planned |
