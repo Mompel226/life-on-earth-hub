@@ -20,6 +20,8 @@
    viruses  off the tree, on purpose
    story    the five steps from the vent to the first cell
    img      the picture on a step: base name in assets/photos/ (900 and 1400 wide, JPEG + WebP), alt, caption, credit, page
+     book    true on a step that shows the book card
+   book     the book itself: title, author, year, one line, where it lives
    ============================================================ */
 window.TREE = {
 
@@ -146,17 +148,18 @@ window.TREE = {
   story: [
     { n:1, title:'The vent', chip:'Water · the medium for life',
       icon:'<path d="M-5 8 L-2 -7 L2 -7 L5 8 Z"/><path d="M0 -9 c0 -3 2 -4 2 -7 M-3 -10 c0 -2 1 -3 1 -5"/>',
-      text:'Four billion years ago the sea floor leaks warm water through rock full of tiny holes. It is warm, not boiling; alkaline, not acidic; and full of hydrogen. Nothing is alive yet.',
-      real:'Lost City, in the Atlantic, is the living example: white chimneys 800 metres down, still venting today.',
+      text:'Four billion years ago the sea floor leaks warm water through rock full of tiny holes. It is warm, not boiling; alkaline, not acidic; and rich in hydrogen, made below the sea floor where seawater reacts with the rock and carried up by the vent. Nothing is alive yet.',
+      real:'Lost City, in the Atlantic, is the living example: white chimneys 800 metres down, still venting today. The reaction that makes the hydrogen is called serpentinisation: iron in the rock takes the oxygen from water and leaves H₂.',
       img:{ base:'assets/photos/lost-city', alt:'White carbonate chimneys of the Lost City vent field, lit by a submersible in the dark',
             caption:'Lost City vent field, 750–900 m down', credit:'Ifremer, ROV Victor 6000, 2005 · CC BY 4.0',
             url:'https://commons.wikimedia.org/wiki/File:Massif_de_chemin%C3%A9es_carbonat%C3%A9es_(Ifremer_00569-68094_-_25275).jpg' },
+      book:true,
       reads:[ { t:'Lost City, the vent field itself', url:'https://en.wikipedia.org/wiki/Lost_City_Hydrothermal_Field' },
               { t:'The hydrothermal vent hypothesis, Understanding Evolution', url:'https://evolution.berkeley.edu/the-origin-of-life/the-hydrothermal-vent-hypothesis/' } ] },
 
     { n:2, title:'The building blocks', chip:'Amino acids, sugars, fatty acids · Topic 4',
       icon:'<circle cx="-5" cy="3" r="3"/><circle cx="5" cy="3" r="3"/><circle cx="0" cy="-5" r="3"/><path d="M-3 1 L-1 -3 M3 1 L1 -3"/>',
-      text:'Carbon dioxide in the seawater meets hydrogen from the rock. Metal minerals in the walls speed the reaction, the job enzymes do in you. Small carbon molecules form: the pieces of the carbohydrates, fats and proteins you meet in Topic 4.',
+      text:'Carbon dioxide in the seawater meets hydrogen rising from the rock below. Metal minerals in the walls speed the reaction, the job enzymes do in you. Small carbon molecules form: the pieces of the carbohydrates, fats and proteins you meet in Topic 4.',
       real:'In 2025 a laboratory made the first of these molecules from CO₂ and H₂ on iron–sulfur minerals, with no enzymes at all.',
       img:{ base:'assets/photos/building-blocks', alt:'A painting of mineral rods with small molecules and short chains forming on their surfaces',
             caption:'Minerals as scaffolds: small molecules join into chains on their surfaces', credit:'Illustration by David S. Goodsell, RCSB Protein Data Bank · CC BY 4.0',
@@ -185,13 +188,19 @@ window.TREE = {
     { n:5, title:'The first cell', chip:'The seven characteristics · 1.1',
       icon:'<circle cx="0" cy="0" r="8"/><path d="M-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0"/><circle cx="-4.5" cy="-3" r=".9" fill="currentColor"/><circle cx="4" cy="3.5" r=".9" fill="currentColor"/>',
       text:'Every living thing descends from one population of cells, LUCA, about 4.2 billion years ago. It lived on hydrogen and carbon dioxide, with DNA, proteins and a membrane. It fed, respired, grew, reproduced, excreted and responded: alive by the seven tests of 1.1.',
-      real:'This is the leading idea, not a fact. Others start life in hot springs on land, or in sprays of sea water. Everyone agrees on this much: life began in water, chemistry came before cells, and every organism shares the DNA code. That shared code is why differences in DNA show how closely two groups are related, which is what the branches of this tree mean.',
+      real:'This is one of two leading ideas, not a settled fact. The vent idea starts from biology: the oldest cells we can reconstruct lived on hydrogen and carbon dioxide, which is exactly what these vents supply. The other starts from chemistry: the parts of RNA are easier to make in shallow pools on land that dry out and refill in sunlight. Neither has yet done everything the other can, and both are still being tested. Everyone agrees on this much: life began in water, chemistry came before cells, and every organism shares the DNA code. That shared code is why differences in DNA show how closely two groups are related, which is what the branches of this tree mean.',
       img:{ base:'assets/photos/first-cell', alt:'A painting of the last universal common ancestor: a cell with a membrane, DNA being pulled apart as it divides, and proteins',
             caption:'LUCA, dividing: a membrane, DNA, proteins', credit:'Illustration by David S. Goodsell, RCSB Protein Data Bank · CC BY 4.0',
             url:'https://pdb101.rcsb.org/sci-art/goodsell-gallery/last-universal-common-ancestor' },
+      book:true,
       reads:[ { t:'LUCA at 4.2 billion years, Moody et al. 2024', url:'https://www.nature.com/articles/s41559-024-02474-w' },
+              { t:'The parts of RNA from cyanide chemistry in sunlight, Sutherland lab 2015', url:'https://www.nature.com/articles/nchem.2202' },
               { t:'The case for hot springs on land, 2026', url:'https://news.ucsc.edu/2026/05/special-issue-of-astrobiology/' },
               { t:'Sparks in water sprays, Stanford 2025', url:'https://news.stanford.edu/stories/2025/03/microlightning-in-water-droplets-may-have-sparked-life-on-earth' } ] }
   ],
 
+  /* the book behind the story — a typeset card, not the cover, which is the publisher's */
+  book: { title:'The Vital Question', author:'Nick Lane', year:2015,
+          text:'The case for this story, told properly: why life needs a flow of energy, why a vent supplies it, and why complex cells took two billion more years. Dr Mompel recommends it.',
+          url:'https://nick-lane.net/books/the-vital-question/' }
 };

@@ -302,6 +302,13 @@
       '<img src="' + b + '-' + ws[0] + '.jpg" srcset="' + set('jpg') + '" sizes="360px" alt="' + esc(img.alt) + '" loading="lazy" decoding="async">' +
       '</picture><figcaption>' + (img.caption ? esc(img.caption) + ' · ' : '') + '<a href="' + esc(img.url) + '" target="_blank" rel="noopener">' + esc(img.credit) + '</a></figcaption></figure>';
   }
+  function bookCard() {
+    var b = T.book; if (!b) return '';
+    return '<a class="book" href="' + esc(b.url) + '" target="_blank" rel="noopener">' +
+      '<span class="book__cover"><span>' + esc(b.title) + '</span><small>' + esc(b.author) + '</small></span>' +
+      '<span class="book__txt"><span class="book__eyebrow">Go deeper · a book</span><b>' + esc(b.title) + '</b>' +
+      '<span class="book__by">' + esc(b.author) + ' · ' + esc(b.year) + '</span>' + esc(b.text) + '</span></a>';
+  }
   function figFor(s) {
     if (s.img) return picture(s.img);
     return s.fig ? '<div class="fig">' + s.fig + '</div>' : '';
@@ -323,7 +330,8 @@
       '<p class="story__text">' + esc(s.text) + '</p>' +
       (s.real ? '<p class="real">' + esc(s.real) + '</p>' : '') +
       '<span class="chip"><b>Meet</b>' + esc(s.chip) + '</span>' +
-      (s.reads && s.reads.length ? '<ul class="reads">' + s.reads.map(function (r) { return '<li>Read: <a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.t) + '</a></li>'; }).join('') + '</ul>' : '');
+      (s.reads && s.reads.length ? '<ul class="reads">' + s.reads.map(function (r) { return '<li>Read: <a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.t) + '</a></li>'; }).join('') + '</ul>' : '') +
+      (s.book ? bookCard() : '');
     cardState = 'story:' + n;
     wireCard();
   }
@@ -377,7 +385,7 @@
       '<ul class="steps">' + T.story.map(function (s) {
         return '<li><button type="button" data-step="' + s.n + '"><span class="n">' + s.n + '</span>' +
                '<span class="w"><span class="t">' + esc(s.title) + '</span><span class="s">' + esc(s.chip) + '</span></span></button></li>';
-      }).join('') + '</ul>';
+      }).join('') + '</ul>' + (T.book ? bookCard() : '');
     if (live.length) {
       h += '<div class="band"><span class="eyebrow">Open now</span></div>' + live.map(function (t) {
         return '<a class="hero" href="' + esc(t.url) + '" data-lab="' + t.id + '">' +
