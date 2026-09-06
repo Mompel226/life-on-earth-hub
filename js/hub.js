@@ -302,6 +302,16 @@
       '<img src="' + b + '-' + ws[0] + '.jpg" srcset="' + set('jpg') + '" sizes="360px" alt="' + esc(img.alt) + '" loading="lazy" decoding="async">' +
       '</picture><figcaption>' + (img.caption ? esc(img.caption) + ' · ' : '') + '<a href="' + esc(img.url) + '" target="_blank" rel="noopener">' + esc(img.credit) + '</a></figcaption></figure>';
   }
+  function evidenceBlock(ev, note) {
+    function list(label, items, cls) {
+      return '<ul class="ev__list ev__list--' + cls + '"><li class="ev__lab">' + label + '</li>' + items.map(function (i) {
+        return '<li>' + esc(i.t) + ' <a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.s) + '</a></li>';
+      }).join('') + '</ul>';
+    }
+    return '<div class="band"><span class="eyebrow">Where the evidence stands</span></div>' + ev.map(function (side) {
+      return '<div class="ev"><h3 class="ev__h">' + esc(side.side) + '</h3>' + list('For', side['for'] || [], 'for') + list('Against', side.against || [], 'against') + '</div>';
+    }).join('') + (note ? '<p class="real">' + esc(note) + '</p>' : '');
+  }
   function bookCard() {
     var b = T.book; if (!b) return '';
     return '<a class="book" href="' + esc(b.url) + '" target="_blank" rel="noopener">' +
@@ -329,6 +339,7 @@
       figFor(s) +
       '<p class="story__text">' + esc(s.text) + '</p>' +
       (s.real ? '<p class="real">' + esc(s.real) + '</p>' : '') +
+      (s.evidence ? evidenceBlock(s.evidence, s.evidenceNote) : '') +
       '<span class="chip"><b>Meet</b>' + esc(s.chip) + '</span>' +
       (s.reads && s.reads.length ? '<ul class="reads">' + s.reads.map(function (r) { return '<li>Read: <a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.t) + '</a></li>'; }).join('') + '</ul>' : '') +
       (s.book ? bookCard() : '');

@@ -60,6 +60,13 @@ is presented as one. Each step on the page links to what it rests on; this is th
 | 5 | The rival ideas: hot springs on land with wet–dry cycles; sparks in water sprays | [UCSC, *Astrobiology* special issue, May 2026](https://news.ucsc.edu/2026/05/special-issue-of-astrobiology/); [Stanford, *Science Advances*, March 2025](https://news.stanford.edu/stories/2025/03/microlightning-in-water-droplets-may-have-sparked-life-on-earth) |
 | 5 | The critique: Lost City's in-situ pH is close to seawater, so proton gradients were weaker than the hypothesis needs | [Tutolo, Goldschmidt 2025](https://goldschmidtabstracts.info/2025/30191.pdf) |
 | 5 | The chemistry case for sunlit pools: the parts of RNA, proteins and lipids from one cyanide-based network in UV light | [Patel et al., *Nature Chemistry* 2015](https://www.nature.com/articles/nchem.2202) |
+| 5 | For vents: rust chimneys grown in the laboratory concentrate RNA about a thousandfold | [Helmbrecht et al., *Geobiology* 2023](https://onlinelibrary.wiley.com/doi/10.1111/gbi.12572) |
+| 5 | Against vents: modelled pH gradients across chimney walls too small and short-lived | [Jackson, *J. Mol. Evol.* 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4999464/) |
+| 5 | For pools: wet–dry cycling in hot springs joins monomers and packs them in vesicles | [Damer & Deamer, *Astrobiology* 2020](https://doi.org/10.1089/ast.2019.2045) |
+| 5 | For pools: "microlightning" between water droplets makes uracil and other C–N molecules | [Zare lab, *Science Advances* 2025](https://www.science.org/doi/10.1126/sciadv.adt8979) |
+| 5 | Against pools: the early Earth as a water world, continents largely submerged 3.2 Ga | [Johnson & Wing, *Nature Geoscience* 2020](https://www.nature.com/articles/s41561-020-0538-9) |
+| 5 | Against pools: LUCA as an anaerobic, H₂-dependent, thermophilic vent dweller | [Weiss et al., *Nature Microbiology* 2016](https://www.nature.com/articles/nmicrobiol2016116) |
+| 5 | Both camps' critiques of each other, in one readable account | [Knowable Magazine, 2020](https://knowablemagazine.org/content/article/physical-world/2020/searching-high-and-low-origins-life) |
 | 1, 5 | The book behind the story: the vent, the energy problem, and why complex life came late | Nick Lane, *The Vital Question* (Profile / Norton, 2015) — [the author's page](https://nick-lane.net/books/the-vital-question/). The card on the page is typeset, not the cover, which is the publisher's. |
 
 **Where the field stands (September 2026).** There is no agreed setting. Two ideas lead: alkaline

@@ -218,6 +218,19 @@ body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow
 .topic__status{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
 .topic__status--planned{color:var(--chalk-dim)}
 
+/* the evidence, for and against, one line and one source each */
+.ev{margin-top:12px}
+.ev__h{font-family:var(--serif);font-size:16px;font-weight:400;color:var(--chalk);margin:0 0 4px}
+.ev__list{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+.ev__list li{position:relative;padding-left:16px;font-size:12.5px;line-height:1.45;color:#DCEAF0}
+.ev__list li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--chalk-mute)}
+.ev__list--for li::before{background:var(--green)}
+.ev__list--against li::before{background:var(--amber)}
+.ev__list .ev__lab{padding-left:0;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--chalk-dim)}
+.ev__list .ev__lab::before{display:none}
+.ev__list a{font-family:var(--mono);font-size:10px;letter-spacing:.02em;color:var(--chalk-dim);border-bottom:1px solid rgba(169,190,203,.35);white-space:nowrap}
+.ev__list a:hover{color:#fff}
+
 /* the book behind the story: a typeset card, since the cover is the publisher's */
 .book{display:flex;gap:12px;align-items:stretch;margin-top:14px;padding:10px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(150,215,240,.18);transition:background .18s}
 .book:hover,.book:focus-visible{background:rgba(255,255,255,.09)}
