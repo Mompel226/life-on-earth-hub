@@ -84,9 +84,10 @@ Everything else is in [`docs/BUILD-NOTES.md`](docs/BUILD-NOTES.md).
 ## 🖼 Images and sources
 
 Every silhouette is from [PhyloPic](https://www.phylopic.org), CC0 or public domain, and
-credited by name in the colophon on the page. The story's pictures are Ifremer's Lost City vent
-field and four of David Goodsell's paintings from the RCSB Protein Data Bank, all CC BY 4.0.
-The story's sources are on each step of the page and listed, with the licences, in
+credited by name in the colophon on the page. Every group carries a photograph from Wikimedia
+Commons, public domain, CC0 or CC BY; the story's pictures are Ifremer's Lost City vent field, three
+textbook illustrations and a painting by David Goodsell from the RCSB Protein Data Bank. The
+story's sources are on each step of the page and listed, with every licence, in
 [`assets/CREDITS.md`](assets/CREDITS.md).
 
 ## 🚀 Deploying

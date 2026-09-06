@@ -45,7 +45,9 @@ branch they hang off, `kind` says whether they end in a silhouette (`tip`), fan 
 (`group`) or are a kingdom. The geometry — angles, rings, arcs — is worked out by `js/hub.js`
 from that list, so a new tip simply takes its share of the rim.
 
-A new silhouette goes in `assets/silhouettes/<id>.svg` (the vector file PhyloPic serves),
+A group's photograph is its `img` record: `assets/photos/<id>-900` and `-1400`, JPEG and WebP, centre-cropped
+to 3 : 2, with alt, caption, credit and the Commons page; only public domain, CC0 or CC BY, and a row in
+`assets/CREDITS.md`. A new silhouette goes in `assets/silhouettes/<id>.svg` (the vector file PhyloPic serves),
 gets a row in `assets/silhouettes/manifest.json` and in `assets/CREDITS.md`, and a `sil`
 record on its group. Then:
 

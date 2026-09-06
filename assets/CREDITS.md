@@ -32,17 +32,53 @@ in `silhouettes/manifest.json` and the `sil` record in `js/tree.js`, rewrite its
 
 ## The pictures on the story
 
-Step 1 is a photograph; steps 2 to 5 are paintings by David S. Goodsell from the RCSB Protein
-Data Bank's Goodsell Gallery, which the RCSB releases under CC BY 4.0. Each is shown cropped,
-at 900 and 1400 px wide, JPEG and WebP; the crops are cut from the TIFFs the gallery serves.
+Step 1 is a photograph of the vent; steps 2 to 4 are pictures students meet in the textbook; step 5
+is a painting by David S. Goodsell from the RCSB Protein Data Bank's Goodsell Gallery, which the
+RCSB releases under CC BY 4.0. Each is shown at 900 and 1400 px wide, JPEG and WebP.
 
 | Step | File | Source | Licence |
 |---|---|---|---|
-| 1 · The vent | `photos/lost-city-*` | **Massif of carbonate chimneys at the Lost City hydrothermal site**, 750–900 m deep, photographed by the ROV *Victor 6000*, Ifremer, 2005. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Massif_de_chemin%C3%A9es_carbonat%C3%A9es_(Ifremer_00569-68094_-_25275).jpg). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| 2 · The building blocks | `photos/building-blocks-*` | **Abiogenesis** (2018), the lower left: minerals as scaffolds, small molecules joining into chains. Illustration by David S. Goodsell, RCSB Protein Data Bank, [doi 10.2210/rcsb_pdb/goodsell-gallery-034](https://pdb101.rcsb.org/sci-art/goodsell-gallery/abiogenesis). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| 3 · The bag | `photos/the-bag-*` | **Abiogenesis** (2018), the upper right: a membrane closing into a vesicle round RNA. Same painting and credit. | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| 4 · The copier | `photos/the-copier-*` | **RecA and DNA** (2021): DNA in yellow, the RecA repair protein in turquoise. Illustration by David S. Goodsell, RCSB Protein Data Bank, [doi 10.2210/rcsb_pdb/goodsell-gallery-038](https://pdb101.rcsb.org/sci-art/goodsell-gallery/reca-and-dna). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| 5 · The first cell | `photos/first-cell-*` | **Last Universal Common Ancestor** (2018): the primordial cell dividing, its DNA pulled apart, a glycolipid wall. Illustration by David S. Goodsell, RCSB Protein Data Bank, [doi 10.2210/rcsb_pdb/goodsell-gallery-035](https://pdb101.rcsb.org/sci-art/goodsell-gallery/last-universal-common-ancestor). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 1 · The vent | `photos/lost-city-*` | **Massif of carbonate chimneys at the Lost City hydrothermal site**, 750–900 m deep, photographed by the ROV *Victor 6000*, Ifremer, 2005. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Massif_de_chemin%C3%A9es_carbonat%C3%A9es_(Ifremer_00569-68094_-_25275).jpg). Cropped. | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 2 · The building blocks | `photos/glycine-*` | **Glycine, ball-and-stick model** by Ben Mills. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3AGlycine-neutral-Ipttt-conformer-3D-bs-17.png). | Public domain |
+| 3 · The bag | `photos/liposome-*` | **Liposome**, from *Phospholipids aqueous solution structures* by Mariana Ruiz Villarreal (LadyofHats). [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Phospholipids_aqueous_solution_structures.svg). Cropped to the liposome. | Public domain |
+| 4 · The copier | `photos/rna-*` | **RNA and DNA compared**, XBio illustration by explorebiology. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3AXBio_illustration_%E2%80%93_RNA.png). | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 5 · The first cell | `photos/first-cell-*` | **Last Universal Common Ancestor** (2018): the primordial cell dividing, its DNA pulled apart, a glycolipid wall. Illustration by David S. Goodsell, RCSB Protein Data Bank, [doi 10.2210/rcsb_pdb/goodsell-gallery-035](https://pdb101.rcsb.org/sci-art/goodsell-gallery/last-universal-common-ancestor). Cropped. | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+
+## The photographs on the groups
+
+One photograph under each group's name, from Wikimedia Commons, centre-cropped to 3 : 2 and shown
+at 900 and 1400 px wide, JPEG and WebP. Every one is public domain, CC0 or CC BY; the credit is
+also in the colophon on the page, from `js/tree.js`.
+
+| Group | File | Source | Photographer | Licence |
+|---|---|---|---|---|
+| Animals | `photos/animals-*` | [Lion, Serengeti National Park (48788336273).jpg](https://commons.wikimedia.org/wiki/File%3ALion%2C_Serengeti_National_Park_%2848788336273%29.jpg) — A lion in the Serengeti | Ankit Gita from Mumbai, Maharashtra, India, India | CC BY 2.0 |
+| Vertebrates | `photos/vertebrates-*` | [Snake skeleton.jpg](https://commons.wikimedia.org/wiki/File%3ASnake_skeleton.jpg) — A snake skeleton: the backbone, bone by bone | dbking | CC BY 2.0 |
+| Mammals | `photos/mammals-*` | [African bush elephant (Loxodonta africana), Masai Mara.jpg](https://commons.wikimedia.org/wiki/File%3AAfrican_bush_elephant_%28Loxodonta_africana%29%2C_Masai_Mara.jpg) — African bush elephant | Hobbyfotowiki | CC0 |
+| Birds | `photos/birds-*` | [Bald eagle in Alaska 2016-3.jpg](https://commons.wikimedia.org/wiki/File%3ABald_eagle_in_Alaska_2016-3.jpg) — Bald eagle | Andy Morffew from Itchen Abbas, Hampshire, UK | CC BY 2.0 |
+| Reptiles | `photos/reptiles-*` | [Endangered species Iguana Iguana from Margarita Island.jpg](https://commons.wikimedia.org/wiki/File%3AEndangered_species_Iguana_Iguana_from_Margarita_Island.jpg) — Green iguana | Wilfredor | CC0 |
+| Amphibians | `photos/amphibians-*` | [Red eyed tree frog edit2.jpg](https://commons.wikimedia.org/wiki/File%3ARed_eyed_tree_frog_edit2.jpg) — Red-eyed tree frog | Careyjamesbalboa (Carey James Balboa) | Public domain |
+| Fish | `photos/fish-*` | [Common clownfish.jpg](https://commons.wikimedia.org/wiki/File%3ACommon_clownfish.jpg) — Clownfish in an anemone | Janderk | Public domain |
+| Arthropods | `photos/arthropods-*` | [20200529 Lucanus cervus 02.jpg](https://commons.wikimedia.org/wiki/File%3A20200529_Lucanus_cervus_02.jpg) — Stag beetle | Flocci Nivis | CC BY 4.0 |
+| Myriapods | `photos/myriapods-*` | [Tiger centipede (Scolopendra polymorpha).jpg](https://commons.wikimedia.org/wiki/File%3ATiger_centipede_%28Scolopendra_polymorpha%29.jpg) — Tiger centipede | Jbjensen1 | CC0 |
+| Insects | `photos/insects-*` | [Honey Bee on Gaillardia Flower - Flickr - Swallowtail Garden Seeds.jpg](https://commons.wikimedia.org/wiki/File%3AHoney_Bee_on_Gaillardia_Flower_-_Flickr_-_Swallowtail_Garden_Seeds.jpg) — Honey bee on a flower | Swallowtail Garden Seeds from Santa Rosa, California, United States | CC BY 2.0 |
+| Arachnids | `photos/arachnids-*` | [Phidippus regius female 01.jpg](https://commons.wikimedia.org/wiki/File%3APhidippus_regius_female_01.jpg) — Jumping spider | Nosferattus | CC0 |
+| Crustaceans | `photos/crustaceans-*` | [Carcinus maenas 265985977.jpg](https://commons.wikimedia.org/wiki/File%3ACarcinus_maenas_265985977.jpg) — Shore crab, from above | Josh Boe | CC BY 4.0 |
+| Plants | `photos/plants-*` | [Canopy shyness Malaysian rainforest Dryabalonops aromatica IMG20250930121416 Canopy Shyness 01.jpg](https://commons.wikimedia.org/wiki/File%3ACanopy_shyness_Malaysian_rainforest_Dryabalonops_aromatica_IMG20250930121416_Canopy_Shyness_01.jpg) — Rainforest trees, seen from the ground | Rohitjahnavi | CC0 |
+| Ferns | `photos/ferns-*` | [Fern fronds at Riverbend CPA (26611537224).jpg](https://commons.wikimedia.org/wiki/File%3AFern_fronds_at_Riverbend_CPA_%2826611537224%29.jpg) — Fern fronds in sunlight | USFWS/Southeast | Public domain |
+| Flowering plants | `photos/flowering-*` | [Blanket flowers, Cathleen Kuehl Memorial Wildflower Meadow 2026-08-01.jpg](https://commons.wikimedia.org/wiki/File%3ABlanket_flowers%2C_Cathleen_Kuehl_Memorial_Wildflower_Meadow_2026-08-01.jpg) — Wildflowers | Peter Cooper Jr. | CC0 |
+| Monocotyledons | `photos/monocots-*` | [Rice terraces, Bali.jpg](https://commons.wikimedia.org/wiki/File%3ARice_terraces%2C_Bali.jpg) — Rice terraces, Bali | Vyacheslav Argenberg | CC BY 4.0 |
+| Dicotyledons | `photos/dicots-*` | [Sunflower Fields.jpg](https://commons.wikimedia.org/wiki/File%3ASunflower_Fields.jpg) — Sunflowers | Wenchieh Yang | CC0 |
+| Fungi | `photos/fungi-*` | [Amanita muscaria 2018 G10.jpg](https://commons.wikimedia.org/wiki/File%3AAmanita_muscaria_2018_G10.jpg) — Fly agaric | George Chernilevsky | Public domain |
+| Protoctists | `photos/protoctists-*` | [Paramécium caudátum.jpg](https://commons.wikimedia.org/wiki/File%3AParam%C3%A9cium_caud%C3%A1tum.jpg) — Paramecium, under the microscope | MTadey | CC BY 4.0 |
+| Prokaryotes | `photos/prokaryotes-*` | [E. coli Bacteria (16578744517).jpg](https://commons.wikimedia.org/wiki/File%3AE._coli_Bacteria_%2816578744517%29.jpg) — Escherichia coli, electron microscope, coloured | NIAID | CC BY 2.0 |
+| Viruses | `photos/viruses-*` | [Influenza A Virus (H1N1)-1.jpg](https://commons.wikimedia.org/wiki/File%3AInfluenza_A_Virus_%28H1N1%29-1.jpg) — Influenza A virus, electron microscope, coloured | NIH Image Gallery | Public domain |
+
+## The book
+
+`photos/vital-question-cover.*` is the cover of Nick Lane, *The Vital Question* (Profile Books, 2015),
+via Open Library. The cover is the publisher's copyright and is shown, small, to identify the book
+the page recommends; it is credited on the card and here.
 
 ## What the story rests on
 

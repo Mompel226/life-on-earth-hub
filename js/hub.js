@@ -285,6 +285,7 @@
     card.style.setProperty('--c', c);
     card.innerHTML = backLink() +
       '<span class="eyebrow">' + esc(path) + '</span><h2>' + esc(g.label) + '</h2>' +
+      (g.img ? picture(g.img) : '') +
       '<div class="band"><span class="eyebrow">What puts an organism here</span></div>' +
       '<ul class="feats">' + (g.feats || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
       (g.eg ? '<p class="eg"><b>For example</b>' + esc(g.eg) + '</p>' : '') +
@@ -314,10 +315,12 @@
   }
   function bookCard() {
     var b = T.book; if (!b) return '';
-    return '<a class="book" href="' + esc(b.url) + '" target="_blank" rel="noopener">' +
-      '<span class="book__cover"><span>' + esc(b.title) + '</span><small>' + esc(b.author) + '</small></span>' +
+    var cover = b.cover
+      ? '<span class="book__cover book__cover--img"><picture><source type="image/webp" srcset="' + b.cover + '.webp"><img src="' + b.cover + '.jpg" alt="The cover of ' + esc(b.title) + '" loading="lazy" decoding="async"></picture></span>'
+      : '<span class="book__cover"><span>' + esc(b.title) + '</span><small>' + esc(b.author) + '</small></span>';
+    return '<a class="book" href="' + esc(b.url) + '" target="_blank" rel="noopener">' + cover +
       '<span class="book__txt"><span class="book__eyebrow">Go deeper · a book</span><b>' + esc(b.title) + '</b>' +
-      '<span class="book__by">' + esc(b.author) + ' · ' + esc(b.year) + '</span>' + esc(b.text) + '</span></a>';
+      '<span class="book__by">' + esc(b.author) + ' · ' + esc(b.year) + (b.coverCredit ? ' · ' + esc(b.coverCredit) : '') + '</span>' + esc(b.text) + '</span></a>';
   }
   function figFor(s) {
     if (s.img) return picture(s.img);
@@ -584,6 +587,8 @@
     cr.innerHTML = 'Silhouettes from <a href="https://www.phylopic.org" target="_blank" rel="noopener">PhyloPic</a>, CC0 or public domain where marked: ' +
       sils.map(function (g) { return '<a href="' + esc(g.sil.url) + '" target="_blank" rel="noopener">' + esc(g.label.toLowerCase()) + '</a> by ' + esc(g.sil.by) + (/public/i.test(g.sil.licence) ? ' (PD)' : ''); }).join(' · ') +
       '. Pictures on the story: ' + T.story.filter(function (x) { return x.img; }).map(function (x) { return '<a href="' + esc(x.img.url) + '" target="_blank" rel="noopener">' + esc(x.title.toLowerCase()) + '</a>, ' + esc(x.img.credit); }).join(' · ') +
+      '. Photographs on the groups: ' + T.groups.filter(function (g) { return g.img; }).concat(V && V.img ? [V] : []).map(function (g) { return '<a href="' + esc(g.img.url) + '" target="_blank" rel="noopener">' + esc(g.label.toLowerCase()) + '</a>, ' + esc(g.img.credit); }).join(' · ') +
+      (T.book && T.book.cover ? '. ' + esc(T.book.coverCredit || 'Book cover: the publisher') + ', shown to identify the book' : '') +
       '. The story follows the alkaline-vent hypothesis; each step links to what it rests on, and the full list with licences is in <a href="https://github.com/Mompel226/life-on-earth-hub/blob/main/assets/CREDITS.md" target="_blank" rel="noopener">assets/CREDITS.md</a>.';
   }
   var timer;
