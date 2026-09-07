@@ -117,7 +117,7 @@ svg.lit .st:not(.is-on) .st__ico,svg.lit .st:not(.is-on) .st__n{opacity:.35}
 .whole:hover{border-color:rgba(150,215,240,.7);color:#fff}
 
 /* ============ masthead ============ */
-.masthead{position:absolute;left:44px;top:38px;max-width:392px;z-index:4;padding:16px 20px;margin:-16px -20px;border-radius:12px;transition:background .3s,box-shadow .3s}
+.masthead{position:absolute;left:44px;top:38px;max-width:392px;z-index:4;padding:10px 14px;margin:-10px -14px;border-radius:12px;transition:background .3s,box-shadow .3s}
 /* while a branch is held the map fills its box, so the words get a frosted panel of their own */
 body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow:0 10px 40px rgba(0,0,0,.25);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .up{
@@ -254,7 +254,7 @@ body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow
 .book__by{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--chalk-dim);margin:2px 0 5px}
 
 /* ============ foot ============ */
-.foot{position:absolute;left:44px;bottom:22px;max-width:380px;z-index:4;padding:14px 20px;margin:-14px -20px;border-radius:12px;transition:background .3s,box-shadow .3s}
+.foot{position:absolute;left:44px;bottom:22px;max-width:340px;z-index:4;padding:9px 14px;margin:-9px -14px;border-radius:12px;transition:background .3s,box-shadow .3s}
 .byline{font-size:12.5px;color:var(--chalk)}
 .byline strong{font-weight:500}
 .byline a{color:var(--teal);border-bottom:1px solid rgba(94,234,212,.4)}
@@ -290,7 +290,7 @@ noscript a{color:var(--teal)}
   .steps button,.labs button{padding:4px 8px}
 }
 @media (max-width:1400px){
-  .foot{max-width:290px}
+  .foot{max-width:236px}
   .masthead{max-width:360px}.masthead h1{font-size:42px}
   .lede{font-size:13.5px;line-height:1.45;max-width:42ch}.maker{font-size:12.5px}
   .map{left:calc(50% - 92px)}
