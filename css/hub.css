@@ -129,7 +129,11 @@ body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow
 .masthead h1 em{font-style:italic;color:var(--teal)}
 .lede{margin-top:12px;font-size:14.5px;color:#C5D4DD;max-width:44ch}
 .maker{margin-top:12px;font-size:13px;color:#C5D4DD}
+/* The school sits under the name rather than after it: on the line it shared, it ran along
+   to where the outermost rim label sits and the two nearly touched. */
+.maker__at{display:block;margin-left:32px;color:#9FB6C4;font-size:12.5px;margin-top:1px}
 .maker::before{content:"";display:inline-block;vertical-align:middle;width:22px;height:1px;background:var(--teal);opacity:.8;margin-right:10px}
+.maker{display:block}
 .maker strong{font-weight:500;color:var(--chalk)}
 
 /* ============ the caption under the map ============ */
