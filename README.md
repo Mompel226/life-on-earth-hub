@@ -35,6 +35,11 @@ The link at the top of the page goes back up.
 Behind this shelf: the **Classification Lab** (Topic 1) is live, and a group clicked on the tree opens
 it on that group — the hub introduces, the lab teaches. Five more labs are planned. Every lab links back here with one line — `docs/link-back.md` is the recipe.
 
+> [!TIP]
+> **Want your students' scores in a spreadsheet of your own?**
+> It is set up once, for every lab at the same time, and it is explained in the main hub:
+> **[Would you like to see how your students are doing?](https://github.com/Mompel226/biology-hub#-would-you-like-to-see-how-your-students-are-doing)**
+
 ## 🧑‍🎓 For your students — there is nothing to set up
 
 > [!TIP]
