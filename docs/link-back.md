@@ -8,7 +8,7 @@ inside `.hdr__stats` and before the "How to use" button. It reuses the Digestion
 existing `.hbtn` class, so no CSS changes are needed:
 
 ```html
-<a class="hbtn" href="https://mompel226.github.io/life-on-earth-hub/"
+<a class="hbtn" href="https://nlcsbiology.com/life-on-earth-hub/"
    title="Life on Earth: the tree of life, and the labs for topics 1 and 17–21">← Life on Earth</a>
 ```
 
@@ -16,8 +16,8 @@ And in the footer line, where the Digestion Lab says "One of the Biology Labs", 
 words at this shelf and at the front door:
 
 ```html
-One of the <a href="https://mompel226.github.io/life-on-earth-hub/">Life on Earth</a> labs ·
-<a href="https://mompel226.github.io/biology-hub/">Biology Hub</a>
+One of the <a href="https://nlcsbiology.com/life-on-earth-hub/">Life on Earth</a> labs ·
+<a href="https://nlcsbiology.com/biology-hub/">Biology Hub</a>
 ```
 
 The first lab to do this is the **Classification Lab** (Topic 1). This page is the recipe

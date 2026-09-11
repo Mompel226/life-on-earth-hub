@@ -11,7 +11,7 @@ a step in the middle and the card tells that part of the story. Point at a lab a
 tree lights, with a line on the outer ripple. Click, and the view flies to the branch. Left
 alone, the tree walks itself.
 
-**Live:** https://mompel226.github.io/life-on-earth-hub/
+**Live:** https://nlcsbiology.com/life-on-earth-hub/
 
 The other shelves look different on purpose — the human body hub is a specimen on a slab,
 this one is a map on water. They share only the type, the ink and the register pattern.
@@ -27,7 +27,7 @@ Edit **`js/topics.js`**. Nothing else. Give the topic a `url` and set `status: '
   title:'Characteristics and classification of living organisms', lab:'Classification Lab',
   ring:'1 · Classification · the whole tree',
   blurb:'…', detail:'12 stations · 90 questions',
-  status:'live', url:'https://mompel226.github.io/classification-lab/' },
+  status:'live', url:'https://nlcsbiology.com/classification-lab/' },
 ```
 
 - `sys` is what the lab lights on the tree: `'tree'` for every branch, or a group id from
