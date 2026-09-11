@@ -15,7 +15,11 @@
    ring    the words that appear on the outer ripple while the lab is pointed at
    groups  true on a lab that is about the groups themselves — it is named on every group's card
    blurb   one or two sentences, in plain words
-   detail  a short fact shown on an open lab, e.g. "12 stations · 90 questions"
+   detail  ONLY A FALLBACK. The stations/questions line is read from the register
+           (js/data/labs.js, generated from labs-shared/labs.json) and matched to this
+           topic by its url, so it follows the lab when the lab grows. This string is
+           used only if that register fails to load. Keep it right anyway —
+           `node tools/status.mjs` fails if it disagrees with the register.
    status  "live" | "build" | "planned"
    url     the published lab, or null
    ============================================================ */
