@@ -11,6 +11,41 @@
 
   var T = window.TREE || { groups: [], story: [] };
   var L = window.TOPICS || [];
+
+  /* ---------- the lab register, and this browser's own progress ----------
+     WHICH labs exist and how big they are lives in js/data/labs.js, generated from
+     labs-shared/labs.json by tools/stamp.mjs. HOW to read a lab's record lives in
+     js/progress.js, shared with every hub. So a count is never typed here: it is read from
+     the register and matched to a topic by its url, and it follows a lab when that lab grows.
+     The string in topics.js is only a fallback — `node tools/status.mjs` fails if the two
+     disagree.
+
+     This hub carries no marks address and must not: it is ONE repository, linked from both
+     the NLCS and the open edition of the front door. It shows only what this browser
+     remembers. Signing in, and bringing handed-in work back, belongs to the front door,
+     where each school sets its own address in js/local.js. */
+  var REG = window.LABS_REGISTER || {}, REG_LABS = REG.labs || [], PROG = window.LabProgress;
+
+  function labFor(t) {
+    var u = String(t.url || '').replace(/\/$/, '');
+    for (var i = 0; i < REG_LABS.length; i++)
+      if (String(REG_LABS[i].url || '').replace(/\/$/, '') === u) return REG_LABS[i];
+    return null;
+  }
+  function statOf(t) {                      /* "10 stations · 64 questions", from the register */
+    var l = labFor(t);
+    if (l && l.stations && l.questions) return l.stations + ' stations · ' + l.questions + ' questions';
+    return t.detail || '';
+  }
+  function progOf(t) {                      /* '' until this browser has opened the lab */
+    var l = labFor(t); if (!l || !PROG) return '';
+    var p = PROG.local(l);
+    if (!p.started && !p.handedIn) return '';
+    return '<span class="hero__prog" title="' + p.done + ' of ' + p.total + ' questions answered correctly">' +
+      '<span class="pbar"><span class="pbar__fill" style="width:' + PROG.pct(p) + '%"></span></span>' +
+      '<b>' + PROG.pct(p) + '%</b><small>' + p.done + ' of ' + p.total +
+      (p.handedIn ? ' · handed in' : '') + '</small></span>';
+  }
   var svg     = document.getElementById('tree');
   var map     = document.getElementById('map');
   var tag     = document.getElementById('tag');
@@ -144,7 +179,7 @@
       '<p class="path">' + esc(t.title) + '</p>' +
       '<p class="topic__blurb">' + esc(t.blurb) + '</p>' +
       (t.status === 'live' && t.url
-        ? '<a class="hero__go" href="' + esc(t.url) + '" style="margin-top:14px">Open the lab</a>' + (t.detail ? '<span class="hero__stat">' + esc(t.detail) + '</span>' : '')
+        ? '<a class="hero__go" href="' + esc(t.url) + '" style="margin-top:14px">Open the lab</a>' + (statOf(t) ? '<span class="hero__stat">' + esc(statOf(t)) + '</span>' : '') + progOf(t)
         : '<p class="topic__status' + (t.status === 'planned' ? ' topic__status--planned' : '') + '">' + (t.status === 'build' ? 'Being built' : 'Planned') + '</p>');
     cardState = 'topic:' + id;
     wireCard();
@@ -177,7 +212,7 @@
         return '<a class="hero" href="' + esc(t.url) + '" data-lab="' + t.id + '">' +
           '<span class="hero__no">Topic ' + t.no + ' · ' + esc(t.year) + '</span>' +
           '<span class="hero__name">' + esc(t.lab) + '</span><span class="hero__sub">' + esc(t.title) + '</span>' +
-          '<span class="hero__go">Open the lab</span>' + (t.detail ? '<span class="hero__stat">' + esc(t.detail) + '</span>' : '') + '</a>';
+          '<span class="hero__go">Open the lab</span>' + (statOf(t) ? '<span class="hero__stat">' + esc(statOf(t)) + '</span>' : '') + progOf(t) + '</a>';
       }).join('');
     }
     if (queued.length) {
