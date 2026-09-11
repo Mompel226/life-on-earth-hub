@@ -10,7 +10,7 @@ Start in the middle and it tells you where you come from.
 
 <br>
 
-[![Open the site](https://img.shields.io/badge/▶_Open_the_site-0969DA?style=for-the-badge&logoColor=white)](https://mompel226.github.io/life-on-earth-hub/)
+[![Open the site](https://img.shields.io/badge/▶_Open_the_site-0969DA?style=for-the-badge&logoColor=white)](https://nlcsbiology.com/life-on-earth-hub/)
 
 ![IGCSE Biology 0610](https://img.shields.io/badge/IGCSE_Biology-0610-3D7A54)
 ![No sign-up](https://img.shields.io/badge/students-no_sign--up_needed-6FA287)
@@ -24,9 +24,9 @@ by **Dr Daniel Mompel Riera** · NLCS Jeju
 
 ## 🧭 Where this sits
 
-This is one **shelf** of the [Biology Hub](https://mompel226.github.io/biology-hub/), the front
+This is one **shelf** of the [Biology Hub](https://nlcsbiology.com/biology-hub/), the front
 door to every Biology app at NLCS Jeju. A student goes front door → this shelf → a lab. The
-other shelves are the [Human Body Hub](https://mompel226.github.io/human-body-hub/) (topics 7,
+other shelves are the [Human Body Hub](https://nlcsbiology.com/human-body-hub/) (topics 7,
 9–16, live) and Foundations and Plants, being built as their own repositories. This one covers
 Topic 1, characteristics and classification, and topics 17–21: inheritance, variation and
 selection, organisms and their environment, human influences on ecosystems, biotechnology.
@@ -44,13 +44,13 @@ it on that group — the hub introduces, the lab teaches. Five more labs are pla
 
 > [!TIP]
 > **Send them the link and you are done.**
-> [mompel226.github.io/life-on-earth-hub](https://mompel226.github.io/life-on-earth-hub/)
+> [nlcsbiology.com/life-on-earth-hub](https://nlcsbiology.com/life-on-earth-hub/)
 >
 > No account, no sign-up, no install. It works on a phone, a Chromebook or a school PC.
 
 | # | Topic | Lab | |
 |:--:|-------|-----|:--:|
-| 1 | Characteristics and classification of living organisms | [Classification Lab](https://mompel226.github.io/classification-lab/) | 🟢 live |
+| 1 | Characteristics and classification of living organisms | [Classification Lab](https://nlcsbiology.com/classification-lab/) | 🟢 live |
 | 17 | Inheritance | Inheritance Lab | ⚪ planned |
 | 18 | Variation and selection | Variation & Selection Lab | ⚪ planned |
 | 19 | Organisms and their environment | Ecology Lab | ⚪ planned |
