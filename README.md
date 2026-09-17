@@ -104,3 +104,20 @@ node tools/stamp.mjs
 That rewrites every `?v=` in `index.html` **and** `version.txt` from one value. Never hand-edit
 `version.txt`. Then commit and push; GitHub Pages does the rest. `?audit=1` on the page counts
 overlapping labels — it should say 0 at 1440 and 1280 wide before a deploy.
+
+## Licence
+
+| What | Licence |
+|---|---|
+| **The software** — everything that runs: JavaScript, Apps Script, Python, Swift, HTML structure, CSS, build tools | [AGPL-3.0](LICENSE) |
+| **The teaching material** — question text, explanations, diagrams and images I made, wherever they are stored | [CC BY-NC-SA 4.0](LICENSE-CONTENT) |
+
+**In plain English.** Use it, change it, run it for your students — free, and you never need to ask.
+If you change the software and let anyone else use it, *including over a network*, you have to publish
+your source under the same licence. You may not sell the teaching material or use it commercially, and
+the credit has to stay.
+
+**Not covered:** third-party images and media keep their own licences — see the picture credits.
+
+© 2026 Dr Daniel Mompel Riera. I hold the copyright, so I can grant other terms: if you want to use any of
+this commercially, ask me at <dmompelriera@nlcsjeju.kr>.
