@@ -10,7 +10,8 @@
    A lab keeps, under the key named in the register (NOT always <id>.v2 — the
    Classification Lab uses .v1):
      { <stationId>: { done:{i:true}, tried:{i:true}, per:{i:n}, one:{i:true}, sig, first } }
-   and, once handed in, <id>.submitted = { name, form, code, at, sent }.
+   and, once anything has reached the teacher's records, <id>.submitted = { at, sent, name }
+   (older copies carry { name, form, code, at, sent } from the days of handing in).
 
    Nothing here writes to a lab's record. Read only.
    ============================================================ */
@@ -27,16 +28,27 @@
     var rec = read(lab.store), sub = read(lab.id + '.submitted');
     var out = { id: lab.id, done: 0, tried: 0, stations: 0, checks: 0,
                 total: lab.questions || 0, ofStations: lab.stations || 0,
-                started: false, handedIn: !!(sub && sub.code), at: sub && sub.at || null,
+                started: false, handedIn: !!(sub && (sub.sent || sub.code)), at: sub && sub.at || null,
                 source: 'this browser' };
-    if (!rec || typeof rec !== 'object') { out.source = sub ? 'handed in' : 'not started'; return out; }
+    if (!rec || typeof rec !== 'object') { out.source = sub ? 'in the records' : 'not started'; return out; }
     Object.keys(rec).forEach(function (id) {
       var r = rec[id];
       if (!r || typeof r !== 'object' || !r.done) return;
-      var n = 0, t = 0;
-      Object.keys(r.done).forEach(function (k) { if (r.done[k]) n++; });
-      Object.keys(r.tried || {}).forEach(function (k) { if (r.tried[k]) t++; });
+      /* Since September 2026 a station can be practised again (labs-shared/engine/sync.js): done /
+         tried are only the go the student is on now, and what they did before lives on in g1 (the
+         first go) and best — letters, one per question: 1 or f right, t tried. A student who
+         starts again has lost nothing, so the hub counts the best ever. */
+      var right = {}, tried = {};
+      Object.keys(r.done).forEach(function (k) { if (r.done[k]) right[k] = tried[k] = 1; });
+      Object.keys(r.tried || {}).forEach(function (k) { if (r.tried[k]) tried[k] = 1; });
+      [r.g1, r.best].forEach(function (s) {
+        String(s || '').split('').forEach(function (c, i) {
+          if (c === '1' || c === 'f') right[i] = tried[i] = 1; else if (c === 't') tried[i] = 1;
+        });
+      });
+      var n = Object.keys(right).length, t = Object.keys(tried).length;
       Object.keys(r.per || {}).forEach(function (k) { out.checks += r.per[k]; });
+      out.checks += Number(r.past) || 0;              /* checks made on earlier goes */
       out.done += n; out.tried += t;
       if (n || t) out.stations++;
     });
@@ -44,7 +56,7 @@
     return out;
   }
 
-  /* The sheet knows only what was handed in, and only for a signed-in student. It is the
+  /* The sheet knows only what the labs saved, and only for a signed-in student. It is the
      backup, not the live state: a student's browser is normally ahead of it. So take
      whichever is further on, and never let a lower server score erase local work. */
   function merge(here, there) {
