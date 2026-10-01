@@ -5,7 +5,8 @@
 **The tree of life for Cambridge IGCSE Biology 0610 — topics 1 and 17–21.**
 
 One drop in the middle, where the first cells formed; every kingdom alive today on the rim.
-Point at a branch and it lights, with what puts an organism there in the syllabus's words.
+Point at a branch and it lights, with its picture and where it sits; the Classification Lab
+teaches what puts an organism there.
 Start in the middle and it tells you where you come from.
 
 <br>
@@ -27,7 +28,8 @@ by **Dr Daniel Mompel Riera** · NLCS Jeju
 This is one **shelf** of the [Biology Hub](https://nlcsbiology.com/biology-hub/), the front
 door to every Biology app at NLCS Jeju. A student goes front door → this shelf → a lab. The
 other shelves are the [Human Body Hub](https://nlcsbiology.com/human-body-hub/) (topics 7,
-9–16, live) and Foundations and Plants, being built as their own repositories. This one covers
+9–16, live), the [Plants Hub](https://nlcsbiology.com/plants-hub/) (topics 6, 8, 14.5, 16.3 and
+18.2, live) and Foundations (topics 2–5, planned). This one covers
 Topic 1, characteristics and classification, and topics 17–21: inheritance, variation and
 selection, organisms and their environment, human influences on ecosystems, biotechnology.
 The link at the top of the page goes back up.
@@ -64,7 +66,8 @@ kingdoms — animals, plants, fungi, prokaryotes, protoctists; under animals, th
 (mammals, birds, reptiles, amphibians, fish) and the arthropods (myriapods, insects,
 arachnids, crustaceans); under plants, ferns and flowering plants (monocotyledons and
 dicotyledons). Viruses float off the tree, with the reason why. Every group carries its
-distinguishing features in the exam's words, then reality in a line beneath.
+picture, an example and a line of reality; the Classification Lab teaches its distinguishing
+features in the exam's words.
 
 In the middle, five steps tell where you come from — the vent, the building blocks, the bag,
 the copier, the first cell — with the exam's words first, the evidence after, and the paper
@@ -77,11 +80,13 @@ their line too.
 
 Static files, no build step beyond a cache stamp, no framework. GitHub Pages serves it as it is.
 
-- **`js/topics.js` — the topic register.** The only file you edit when a lab goes live.
-- **`js/tree.js` — the tree register.** Groups, features, the story, the credits. Add a group
-  and the geometry follows.
-- `js/hub.js` draws the tree, lights the route to whatever you point at, flies to it when you
-  click, tours by itself, and fills the card.
+- **`js/topics.js` — the topic register.** Give a lab its `url` and `status:'live'` here when it
+  goes live; `docs/BUILD-NOTES.md` lists the other places a new lab goes.
+- **`js/tree.js` — the tree register**, a copy of `labs-shared/tree/tree.js` (edit it there, then
+  `node tools/sync-shared.mjs`): groups, features, the story, the credits. Add a group and the
+  geometry follows.
+- `js/tree-draw.js` (shared the same way) draws the tree; `js/hub.js` lights the route to whatever
+  you point at, flies to it when you click, tours by itself, and fills the card.
 - `css/hub.css` — the water, the tree, the card, the phone.
 
 Everything else is in [`docs/BUILD-NOTES.md`](docs/BUILD-NOTES.md).

@@ -157,9 +157,6 @@ body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow
 .band{display:flex;align-items:center;gap:10px;margin-top:18px}
 .band::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.1)}
 .band .count{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--chalk-mute)}
-.feats{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
-.feats li{position:relative;padding-left:16px;font-size:14px;color:#DCEAF0}
-.feats li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--c,#BFE9F0)}
 .eg{margin-top:12px;font-size:13.5px;color:#DCEAF0}
 .eg b{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-dim);margin-right:6px}
 .real{margin-top:12px;font-size:13px;color:#B6C9D5;border-left:2px solid rgba(255,255,255,.14);padding-left:12px}

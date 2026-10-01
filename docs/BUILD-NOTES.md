@@ -6,7 +6,8 @@ The whole page is water: light from the surface, the deep below. The tree of lif
 circle in it — one drop in the middle, where the first cells formed, and every group alive
 today on the rim — and a glass card shows whatever you point at. Point at a group and the
 route from the middle to that tip lights in its kingdom's colour, the label pins to the
-silhouette, and the card gives what puts an organism there in the syllabus's words. Point at
+silhouette, and the card shows the group's picture, where it sits, an example and a line of
+reality, and the way into the Classification Lab, which teaches what puts an organism there. Point at
 a step in the middle and the card tells that part of the story. Point at a lab and the whole
 tree lights, with a line on the outer ripple. Click, and the view flies to the branch. Left
 alone, the tree walks itself.
@@ -20,47 +21,60 @@ this one is a map on water. They share only the type, the ink and the register p
 
 ## Adding a lab
 
-Edit **`js/topics.js`**. Nothing else. Give the topic a `url` and set `status: 'live'`:
+In this repository, edit **`js/topics.js`**: give the topic a `url` and set `status: 'live'`.
+The real entry for the Classification Lab:
 
 ```js
-{ id:'classification', no:1, year:'Y9', side:'l', sys:'tree', anchor:null,
+{ id:'classification', no:1,  year:'Y9',  side:'l', sys:'tree', anchor:null,
   title:'Characteristics and classification of living organisms', lab:'Classification Lab',
-  ring:'1 · Classification · the whole tree',
-  blurb:'…', detail:'12 stations · 90 questions',
+  ring:'1 · Classification · the whole tree', groups:true,
+  blurb:'…', detail:'10 stations · 64 questions',
   status:'live', url:'https://nlcsbiology.com/classification-lab/' },
 ```
+
+`detail` is only a fallback: the size shown comes from the register (`js/data/labs.js`), and
+`tools/status.mjs` fails if the two disagree. Outside this repository a new lab also needs its row
+in `labs-shared/labs.json` (the lab's own build writes its counts), its entry on the front door
+(biology-hub `js/shelves.js`), a row in the labs script's `LABS` and a sitemap entry; then
+`node tools/stamp.mjs` here.
 
 - `sys` is what the lab lights on the tree: `'tree'` for every branch, or a group id from
   `js/tree.js` (`'animals'`, `'insects'` …) for a lab about one group.
 - `ring` is the line written round the outer ripple while the lab is pointed at.
 - `anchor` and `side` exist so the shape matches the body hub's register; leave them.
+- `groups: true` goes on the lab about the groups themselves (hub.js `GROUP_LAB`): every
+  group's card offers its button.
 
 A live lab appears in the card under **Open now** as a card with an "Open the lab" button;
 anything else sits under **Being built**, with its status pill and nothing about order.
 
 ## Adding or changing a group
 
-Edit **`js/tree.js`**. The groups sit in the order they go round the rim; `parent` says which
-branch they hang off, `kind` says whether they end in a silhouette (`tip`), fan out again
-(`group`) or are a kingdom. The geometry — angles, rings, arcs — is worked out by `js/hub.js`
-from that list, so a new tip simply takes its share of the rim.
+`js/tree.js` here is a COPY: edit **`labs-shared/tree/tree.js`**, then run
+`node tools/sync-shared.mjs` here (it copies tree.js, tree-draw.js and the silhouettes in, and
+re-inlines them) and rebuild the Classification Lab, which uses the same tree. The groups sit in
+the order they go round the rim; `parent` says which branch they hang off, `kind` says whether
+they end in a silhouette (`tip`), fan out again (`group`) or are a kingdom. The geometry — angles,
+rings, arcs — is worked out by `js/tree-draw.js` (shared too) from that list, so a new tip simply
+takes its share of the rim.
 
 A group's photograph is its `img` record: `assets/photos/<id>-900` and `-1400`, JPEG and WebP, centre-cropped
 to 3 : 2, with alt, caption, credit and the Commons page; only public domain, CC0 or CC BY, and a row in
-`assets/CREDITS.md`. A new silhouette goes in `assets/silhouettes/<id>.svg` (the vector file PhyloPic serves),
-gets a row in `assets/silhouettes/manifest.json` and in `assets/CREDITS.md`, and a `sil`
-record on its group. Then:
+`assets/CREDITS.md`. A new silhouette goes in `labs-shared/tree/silhouettes/<id>.svg` (the vector file
+PhyloPic serves), gets a row in `labs-shared/tree/silhouettes/manifest.json` and in `assets/CREDITS.md`,
+and a `sil` record on its group. Then:
 
 ```
-python3 tools/inline-silhouettes.py
+node tools/sync-shared.mjs
 ```
 
-which rewrites the block between the `SILHOUETTES` markers in `index.html`. Only CC0 or
+which copies them into `assets/silhouettes/` and runs `tools/inline-silhouettes.py`, which rewrites
+the block between the `SILHOUETTES` markers in `index.html`. Only CC0 or
 public-domain silhouettes; the credit goes in the colophon by itself, from the register.
 
 ## The story
 
-`story` in `js/tree.js`: five steps, each with the exam words first (`text`), reality after
+`story` in the tree register (`labs-shared/tree/tree.js`): five steps, each with the exam words first (`text`), reality after
 (`real`), the Topic 4 molecule it leads to (`chip`), a picture (`img`: a photograph or one of
 David Goodsell's paintings from the RCSB PDB, CC BY 4.0, cropped to the card's shape at 900 and
 1400 px) and the papers it rests on (`reads`). Real pictures, not drawings: the Berkeley diagram
@@ -71,14 +85,19 @@ the class uses is copyright UCMP and AAAS, for classrooms only, so it is not her
 ```
 index.html                  the page; silhouettes inlined between the SILHOUETTES markers
 css/hub.css                 the water, the tree, the card, the phone
-js/topics.js                THE TOPIC REGISTER — the file you edit when a lab opens
-js/tree.js                  the tree register: groups, features, story, credits
-js/hub.js                   draws the tree, lights it, flies, tours, the card, the audit
-assets/silhouettes/         the sixteen PhyloPic vectors + manifest.json
-assets/photos/              the five story pictures, 900 and 1400 px, JPEG and WebP
+js/topics.js                the topic register (see Adding a lab)
+js/tree.js                  COPY of labs-shared/tree/tree.js: groups, features, story, credits
+js/tree-draw.js             COPY of labs-shared/tree/tree-draw.js: works out the geometry, draws the tree
+js/hub.js                   wires it: lights the route, flies, tours, the card, deep links, the audit
+js/progress.js              GENERATED by tools/stamp.mjs: a copy of labs-shared/progress.js
+js/data/labs.js, .json      GENERATED by tools/stamp.mjs from labs-shared/labs.json
+assets/silhouettes/         COPIES of labs-shared/tree/silhouettes/: the PhyloPic vectors + manifest.json
+assets/photos/              every group's and every story step's photograph, 900 and 1400 px, JPEG and
+                            WebP, plus the book cover
 assets/CREDITS.md           every image and every source, with licences
 tools/stamp.mjs             the deploy step: rewrites every ?v= and version.txt from one value
 tools/inline-silhouettes.py re-inlines the silhouettes into index.html
+tools/sync-shared.mjs       copies the tree and the silhouettes in from labs-shared/tree/, then re-inlines
 docs/link-back.md           the line a lab adds to point back here
 .nojekyll                   stops GitHub Pages running the files through Jekyll
 ```

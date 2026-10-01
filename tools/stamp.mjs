@@ -9,7 +9,7 @@ const STAMP = String(Math.floor(Date.now() / 1000));
 /* ---------- the shared progress files ----------
    labs-shared/labs.json is the single register of labs — one place for each lab's question
    count, the shelf it sits behind, and the localStorage key it keeps progress under (which is
-   NOT always <id>.v2: the Classification Lab uses .v1). labs-shared/progress.js is the only
+   not <id>.v2 by default: only the Digestion Lab uses .v2, the others .v1 — always read it from there). labs-shared/progress.js is the only
    code that knows how to read a lab's record, so this hub never has to know a lab's internals.
    Both are copied in here, so the published site is self-contained: adding a lab means editing
    labs.json and rebuilding, with no hub code changed.
