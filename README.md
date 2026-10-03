@@ -29,7 +29,7 @@ This is one **shelf** of the [Biology Hub](https://nlcsbiology.com/biology-hub/)
 door to every Biology app at NLCS Jeju. A student goes front door → this shelf → a lab. The
 other shelves are the [Human Body Hub](https://nlcsbiology.com/human-body-hub/) (topics 7,
 9–16, live), the [Plants Hub](https://nlcsbiology.com/plants-hub/) (topics 6, 8, 14.5, 16.3 and
-18.2, live) and Foundations (topics 2–5, planned). This one covers
+18.2, live) and [Foundations](https://nlcsbiology.com/foundations-hub/) (topics 2–5, live). This one covers
 Topic 1, characteristics and classification, and topics 17–21: inheritance, variation and
 selection, organisms and their environment, human influences on ecosystems, biotechnology.
 The link at the top of the page goes back up.
