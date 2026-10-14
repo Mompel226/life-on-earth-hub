@@ -120,11 +120,9 @@ svg.lit .st:not(.is-on) .st__ico,svg.lit .st:not(.is-on) .st__n{opacity:.35}
 .masthead{position:absolute;left:44px;top:38px;max-width:392px;z-index:4;padding:10px 14px;margin:-10px -14px;border-radius:12px;transition:background .3s,box-shadow .3s}
 /* while a branch is held the map fills its box, so the words get a frosted panel of their own */
 body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow:0 10px 40px rgba(0,0,0,.25);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-.up{
-  display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  color:#9FD8E4;border-bottom:1px solid rgba(159,216,228,.4);margin-bottom:14px;transition:color .15s,border-color .15s
-}
-.up:hover{color:#fff;border-bottom-color:#fff}
+/* the way back (14 Oct 2026, Daniel: pupils missed it): a solid pill in this site's own colours */
+.up{display:inline-flex;align-items:center;flex:none;white-space:nowrap;min-height:34px;margin:0 0 14px;padding:0 16px 0 13px;font:650 14px/1 var(--sans,Inter,system-ui,sans-serif);letter-spacing:0;text-transform:none;color:#06161F;background:#9FD8E4;border:0;border-radius:999px;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.up:hover,.up:focus-visible{background:#fff;color:#06161F;text-decoration:none}
 .masthead h1{font-family:var(--serif);font-size:48px;line-height:1.05;letter-spacing:-.018em;margin-top:6px}
 .masthead h1 em{font-style:italic;color:var(--teal)}
 .lede{margin-top:12px;font-size:14.5px;color:#C5D4DD;max-width:44ch}
