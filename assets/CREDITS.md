@@ -1,5 +1,7 @@
 # Where every image came from, and what the story rests on
 
+The `tools/` named here stay on Daniel's computer: they are not in this repository (since 18 Oct 2026).
+
 Every silhouette is from [PhyloPic](https://www.phylopic.org) and is either **CC0** (no rights
 reserved) or carries the **Public Domain Mark**. They are credited by contributor in the
 colophon on the page, from `js/tree.js`, and here. The files in `silhouettes/` are the vector
