@@ -83,7 +83,8 @@ Static files, no build step beyond a cache stamp, no framework. GitHub Pages ser
 The `tools/` named here stay on Daniel's computer: they are not in this repository (since 18 Oct 2026).
 
 - **`js/topics.js` — the topic register.** Give a lab its `url` and `status:'live'` here when it
-  goes live; `docs/BUILD-NOTES.md` lists the other places a new lab goes.
+  goes live; each topic's `at` (its place on the tree) and `colour` put its door there; `docs/BUILD-NOTES.md` lists the
+  other places a new lab goes.
 - **`js/tree.js` — the tree register**, a copy of `labs-shared/tree/tree.js` (edit it there, then
   `node tools/sync-shared.mjs`): groups, features, the story, the credits. Add a group and the
   geometry follows.

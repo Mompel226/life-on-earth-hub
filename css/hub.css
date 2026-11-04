@@ -14,6 +14,8 @@
   /* one glow per kingdom, on the water */
   --c-animals:#FF9F80;--c-plants:#8EE6A2;--c-fungi:#F6C77A;--c-protoctists:#8AD8FF;--c-prokaryotes:#C9B3FF;
   --c-story:#FFD48A;--c-viruses:#C7D3DA;--c-tree:#BFE9F0;
+  /* a topic's own colour where no group has one: topic 18 at the first cell (js/topics.js `colour`) */
+  --c-rose:#F4A6C6;
   --amber:#F5A623;--green:#4ADE80;
 }
 *{box-sizing:border-box}
@@ -195,15 +197,16 @@ body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow
 /* the one that is open */
 .hero{
   display:block;position:relative;margin-top:10px;background:rgba(255,255,255,.05);border:1px solid rgba(150,215,240,.22);
-  border-left:4px solid var(--green);border-radius:6px;padding:12px 14px 13px;transition:background .18s
+  border-left:4px solid var(--tc,var(--green));border-radius:6px;padding:12px 14px 13px;transition:background .18s
 }
 .hero:hover,.hero:focus-visible,.hero.is-hot{background:rgba(255,255,255,.09)}
-.hero__no{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--chalk-dim)}
-.hero__name{font-family:var(--serif);font-size:20px;color:var(--chalk);margin-top:2px}
-.hero__sub{font-size:12.5px;color:var(--chalk-dim)}
+/* each on its own line (they had run together: "TOPIC 1 · Y9Classification Lab…") */
+.hero__no{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--chalk-dim)}
+.hero__name{display:block;font-family:var(--serif);font-size:20px;color:var(--tc,var(--chalk));margin-top:2px}
+.hero__sub{display:block;font-size:12.5px;color:var(--chalk-dim)}
 .hero__go{
   display:inline-block;margin-top:9px;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
-  background:var(--green);color:#08121A;padding:6px 11px;border-radius:2px
+  background:var(--tc,var(--green));color:#08121A;padding:6px 11px;border-radius:2px
 }
 .hero__stat{margin-left:10px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--chalk-mute)}
 
@@ -211,15 +214,21 @@ body.is-held .masthead,body.is-held .foot{background:rgba(5,22,31,.6);box-shadow
    student who has never touched it meets no empty bar. Chalk on water, the hub's own green. */
 .hero__prog{display:flex;align-items:center;gap:9px;margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.13)}
 .hero__prog .pbar{flex:1 1 auto;min-width:64px;height:4px;border-radius:2px;background:rgba(255,255,255,.13);overflow:hidden}
-.hero__prog .pbar__fill{display:block;height:100%;background:var(--green);border-radius:2px;transition:width .5s ease}
-.hero__prog b{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--green);letter-spacing:.04em}
+.hero__prog .pbar__fill{display:block;height:100%;background:var(--tc,var(--green));border-radius:2px;transition:width .5s ease}
+.hero__prog b{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--tc,var(--green));letter-spacing:.04em}
 .hero__prog small{font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--chalk-mute)}
 @media (prefers-reduced-motion:reduce){.hero__prog .pbar__fill{transition:none}}
 /* the ones still to come */
 .labs{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:2px}
 .labs button{display:flex;gap:11px;align-items:center;width:100%;text-align:left;padding:5px 8px;border-radius:6px;transition:background .18s}
 .labs button:hover,.labs button:focus-visible,.labs button.is-hot{background:rgba(255,255,255,.07);outline:none}
-.labs .no{font-family:var(--mono);font-size:11px;color:var(--chalk-mute);width:20px;flex:none}
+.labs .no{font-family:var(--mono);font-size:11px;color:var(--tc,var(--chalk-mute));width:20px;flex:none}
+/* a lab on a place's card that is not open yet: its colour, and why it lives there */
+.door{display:flex;gap:9px;align-items:flex-start;margin-top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-dim)}
+.door__dot{flex:none;width:9px;height:9px;margin-top:2px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
+.door small{display:block;margin-top:3px;font-family:var(--sans);font-size:12px;letter-spacing:0;text-transform:none;color:var(--chalk-dim)}
+/* a step at the centre glows in the colour of what is lit: gold for the story, a topic's own colour for its topic */
+svg.lit .st.is-on .st__disc{filter:drop-shadow(0 0 10px var(--c,#FFD48A))}
 .labs .l{font-family:var(--serif);font-size:15.5px;color:var(--chalk);min-width:0}
 .labs .l small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--chalk-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .labs .pill{

@@ -11,8 +11,14 @@
    year    year group
    title   syllabus topic name
    lab     name of the app that covers it
-   sys     what it lights on the tree: "tree" (every branch) or a group id from js/tree.js
-   anchor  unused here — the body hub points at an organ; the tree has no one place. Keep null.
+   sys     kept for the shape of the body hub's register; `at` says where the topic lives
+   at      where the topic lives on the tree (Daniel, 4 Nov 2026: each lab "accessible from clicking the relevant
+           element in the cladogram"): { tree:true } every branch; { story:n } a step at the centre; { groups:[ids] }
+           groups of js/tree.js. Pointing at the topic lights that place; the place's card carries a door to the lab.
+   colour  the topic's own colour, a --c-<name> of css/hub.css: the colour of the place it lives, so no two labs
+           share one (Daniel: "they should have different colors")
+   why     one line on that door: why the topic lives there
+   anchor  unused here — the body hub points at an organ. Keep null.
    side    unused here, kept so the shape matches the body hub's register
    ring    the words that appear on the outer ripple while the lab is pointed at
    groups  true on a lab that is about the groups themselves — it is named on every group's card
@@ -26,39 +32,44 @@
    url     the published lab, or null
    ============================================================ */
 window.TOPICS = [
-  { id:'classification', no:1,  year:'Y9',  side:'l', sys:'tree', anchor:null,
+  { id:'classification', no:1,  year:'Y9',  side:'l', sys:'tree', anchor:null, at:{ tree:true }, colour:'tree',
     title:'Characteristics and classification of living organisms', lab:'Classification Lab',
     ring:'1 · Classification · the whole tree', groups:true,
     blurb:'The seven things every living organism does, the five kingdoms and the groups inside them, and how to make a key that names an organism from what you can see.',
     detail:'10 stations · 64 questions',
     status:'live', url:'https://nlcsbiology.com/classification-lab/' },
 
-  { id:'inheritance',   no:17, year:'Y11', side:'l', sys:'tree', anchor:null,
+  { id:'inheritance',   no:17, year:'Y11', side:'l', sys:'tree', anchor:null, at:{ story:4 }, colour:'story',
+    why:'DNA: the copy every cell, and every child, inherits',
     title:'Inheritance',            lab:'Inheritance Lab',
     ring:'17 · Inheritance · every branch',
     blurb:'Chromosomes, genes and DNA; how a cell divides by mitosis and by meiosis; and how a genetic diagram predicts the offspring of two parents.',
     detail:'14 stations · 100 questions',
     status:'live', url:'https://nlcsbiology.com/inheritance-lab/' },
 
-  { id:'variation',     no:18, year:'Y11', side:'l', sys:'tree', anchor:null,
+  { id:'variation',     no:18, year:'Y11', side:'l', sys:'tree', anchor:null, at:{ story:5 }, colour:'rose',
+    why:'every branch grew from the first cell: variation and natural selection made them',
     title:'Variation and selection', lab:'Variation & Selection Lab',
     ring:'18 · Variation and selection · every branch',
     blurb:'Why no two organisms are the same, how natural selection turns variation into adaptation, and how breeders use the same rule on crops and animals.',
     status:'planned', url:null },
 
-  { id:'ecology',       no:19, year:'Y11', side:'r', sys:'tree', anchor:null,
+  { id:'ecology',       no:19, year:'Y11', side:'r', sys:'tree', anchor:null, at:{ groups:['plants'] }, colour:'plants',
+    why:'plants are the producers: every food chain starts with them',
     title:'Organisms and their environment', lab:'Ecology Lab',
     ring:'19 · Organisms and their environment · every branch',
     blurb:'Food chains and webs, how energy passes along them and is lost, the carbon and nitrogen cycles, and why a population grows and then stops.',
     status:'planned', url:null },
 
-  { id:'human-influence', no:20, year:'Y11', side:'r', sys:'tree', anchor:null,
+  { id:'human-influence', no:20, year:'Y11', side:'r', sys:'tree', anchor:null, at:{ groups:['mammals'] }, colour:'animals',
+    why:'humans are mammals: what people do to ecosystems',
     title:'Human influences on ecosystems', lab:'Human Influences Lab',
     ring:'20 · Human influences · every branch',
     blurb:'Feeding eight billion people, habitat destruction, pollution, and what conservation can still save.',
     status:'planned', url:null },
 
-  { id:'biotech',       no:21, year:'Y11', side:'r', sys:'tree', anchor:null,
+  { id:'biotech',       no:21, year:'Y11', side:'r', sys:'tree', anchor:null, at:{ groups:['prokaryotes', 'fungi'] }, colour:'prokaryotes',
+    why:'bacteria and yeast put to work',
     title:'Biotechnology and genetic modification', lab:'Biotechnology Lab',
     ring:'21 · Biotechnology · every branch',
     blurb:'Bacteria and yeast put to work, enzymes in industry, and what it means to move a gene from one organism into another.',

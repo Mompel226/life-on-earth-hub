@@ -67,6 +67,23 @@
 
   /* the lab that teaches the groups themselves — a group on the tree opens it there */
   var GROUP_LAB = L.filter(function (t) { return t.groups; })[0] || null;
+  /* every other topic lives at one place on the tree (topics.js `at`), in its own colour (`colour`): pointing at it
+     lights that place, and the place's card carries a door to its lab (Daniel, 4 Nov 2026) */
+  function tcol(t) { return 'var(--c-' + ((t && t.colour) || 'tree') + ')'; }
+  function isLive(t) { return !!(t && t.status === 'live' && t.url); }
+  function topicsAt(kind, id) {
+    return L.filter(function (t) {
+      var a = t.at || {};
+      return kind === 'story' ? a.story === +id : kind === 'group' ? (a.groups || []).indexOf(id) >= 0 : false;
+    });
+  }
+  function door(t) {
+    var st = ' style="--c:' + tcol(t) + '"';
+    if (isLive(t)) return '<a class="golab"' + st + ' href="' + esc(t.url) + '">Learn it in the ' + esc(t.lab) + '<small>Topic ' + t.no + ' · ' + esc(t.why || t.title) + '</small></a>';
+    return '<p class="door"' + st + '><span class="door__dot"></span><span>' + esc(t.lab) + ' · ' + (t.status === 'build' ? 'being built' : 'planned') +
+      '<small>Topic ' + t.no + ' · ' + esc(t.why || t.title) + '</small></span></p>';
+  }
+  function doorsAt(kind, id) { return topicsAt(kind, id).map(door).join(''); }
   function labLive() { return !!(GROUP_LAB && GROUP_LAB.status === 'live' && GROUP_LAB.url); }
   function labHref(id) { return labLive() ? GROUP_LAB.url + '#' + id : null; }
 
@@ -78,7 +95,8 @@
     onClick: function (kind, id) {
       /* a group opens the lab on that group once the lab exists; until then, and for the
          story, a click holds the view the way it always did */
-      if (kind === 'group' && labHref(id)) { window.location.href = labHref(id); return; }
+      /* …unless another lab that is open lives on that group too: then the card stays, with both doors */
+      if (kind === 'group' && labHref(id) && !topicsAt('group', id).some(isLive)) { window.location.href = labHref(id); return; }
       toggleHold(kind, id);
     }
   });
@@ -104,7 +122,8 @@
   function backLink() { return held ? '<button type="button" class="back" data-back>The whole tree</button>' : ''; }
   function labButton(id) {
     if (!GROUP_LAB) return '';
-    if (labHref(id)) return '<a class="golab" href="' + esc(labHref(id)) + '">Learn it in the ' + esc(GROUP_LAB.lab) + '<small>the features, the questions, the marks</small></a>';
+    /* in the Classification Lab's own colour on every card, so it never shares a colour with another lab's door */
+    if (labHref(id)) return '<a class="golab" style="--c:' + tcol(GROUP_LAB) + '" href="' + esc(labHref(id)) + '">Learn it in the ' + esc(GROUP_LAB.lab) + '<small>the features, the questions, the marks</small></a>';
     return '<p class="lab">' + esc(GROUP_LAB.lab) + ' · ' + (GROUP_LAB.status === 'build' ? 'being built' : 'planned') + '</p>';
   }
 
@@ -123,7 +142,7 @@
       (g.img ? picture(g.img) : '') +
       (g.eg ? '<p class="eg"><b>For example</b>' + esc(g.eg) + '</p>' : '') +
       (g.real ? '<p class="real">' + esc(g.real) + '</p>' : '') +
-      labButton(id);
+      labButton(id) + doorsAt('group', id);
     cardState = 'group:' + id;
     wireCard();
   }
@@ -160,7 +179,7 @@
       '<p class="story__text">' + esc(s.text) + '</p>' +
       (s.real ? '<p class="real">' + esc(s.real) + '</p>' : '') +
       (s.evidence ? evidenceBlock(s.evidence, s.evidenceNote) : '') +
-      '<span class="chip"><b>Meet</b>' + esc(s.chip) + '</span>' +
+      '<span class="chip"><b>Meet</b>' + esc(s.chip) + '</span>' + doorsAt('story', n) +
       (s.reads && s.reads.length ? '<ul class="reads">' + s.reads.map(function (r2) { return '<li>Read: <a href="' + esc(r2.url) + '" target="_blank" rel="noopener">' + esc(r2.t) + '</a></li>'; }).join('') + '</ul>' : '') +
       (s.book ? bookCard() : '');
     cardState = 'story:' + n;
@@ -168,7 +187,13 @@
   }
   function lightTopic(id, withCard) {
     var t = L.filter(function (x) { return x.id === id; })[0]; if (!t) return;
-    var r = (t.sys === 'tree' || !G[t.sys]) ? tree.lightAll(t.ring || '') : tree.light(t.sys, true);
+    /* light the place the topic lives, in the topic's own colour */
+    var a = t.at || { tree:true }, c = tcol(t), gs = (a.groups || []).filter(function (x) { return G[x]; });
+    if (a.story && STORY[a.story]) tree.lightStory(a.story, true);
+    else if (gs.length) tree.lightMany(gs, t.colour);
+    else tree.lightAll(t.ring || '');
+    svg.style.setProperty('--c', c);
+    var r = { colour:c };
     say(t.lab, 'Topic ' + t.no + ' · ' + t.title, r.colour);
     document.querySelectorAll('[data-lab="' + t.id + '"]').forEach(function (b) { b.classList.add('is-hot'); });
     current = { kind:'topic', id:id };
@@ -179,7 +204,7 @@
       '<p class="path">' + esc(t.title) + '</p>' +
       '<p class="topic__blurb">' + esc(t.blurb) + '</p>' +
       (t.status === 'live' && t.url
-        ? '<a class="hero__go" href="' + esc(t.url) + '" style="margin-top:14px">Open the lab</a>' + (statOf(t) ? '<span class="hero__stat">' + esc(statOf(t)) + '</span>' : '') + progOf(t)
+        ? '<a class="hero__go" href="' + esc(t.url) + '" style="margin-top:14px;--tc:' + c + '">Open the lab</a>' + (statOf(t) ? '<span class="hero__stat">' + esc(statOf(t)) + '</span>' : '') + progOf(t)
         : '<p class="topic__status' + (t.status === 'planned' ? ' topic__status--planned' : '') + '">' + (t.status === 'build' ? 'Being built' : 'Planned') + '</p>');
     cardState = 'topic:' + id;
     wireCard();
@@ -209,7 +234,7 @@
       }).join('') + '</ul>' + (T.book ? bookCard() : '');
     if (live.length) {
       h += '<div class="band"><span class="eyebrow">Open now</span></div>' + live.map(function (t) {
-        return '<a class="hero" href="' + esc(t.url) + '" data-lab="' + t.id + '">' +
+        return '<a class="hero" href="' + esc(t.url) + '" data-lab="' + t.id + '" style="--tc:' + tcol(t) + '">' +
           '<span class="hero__no">Topic ' + t.no + ' · ' + esc(t.year) + '</span>' +
           '<span class="hero__name">' + esc(t.lab) + '</span><span class="hero__sub">' + esc(t.title) + '</span>' +
           '<span class="hero__go">Open the lab</span>' + (statOf(t) ? '<span class="hero__stat">' + esc(statOf(t)) + '</span>' : '') + progOf(t) + '</a>';
@@ -218,7 +243,7 @@
     if (queued.length) {
       h += '<div class="band"><span class="eyebrow">Being built</span><span class="count">' + queued.length + ' on the way</span></div>' +
         '<ul class="labs">' + queued.map(function (t) {
-          return '<li><button type="button" data-lab="' + t.id + '"><span class="no">' + t.no + '</span>' +
+          return '<li><button type="button" data-lab="' + t.id + '" style="--tc:' + tcol(t) + '"><span class="no">' + t.no + '</span>' +
                  '<span class="l">' + esc(t.lab) + '<small>' + esc(t.title) + '</small></span>' +
                  '<span class="pill' + (t.status === 'build' ? ' pill--build' : '') + '">' + (t.status === 'build' ? 'Being built' : 'Planned') + '</span></button></li>';
         }).join('') + '</ul>';
@@ -258,7 +283,13 @@
     document.body.classList.add('is-held');
     whole.hidden = false;
     show(kind, id, true);
-    if (kind === 'topic') { tree.flyTo(tree.FULL); return; }
+    /* a topic that lives at one place flies there, as that place does; one about the whole tree shows it all */
+    if (kind === 'topic') {
+      var tt = L.filter(function (x) { return x.id === id; })[0], at = (tt && tt.at) || {};
+      if (at.story || at.groups) tree.flyTo(tree.boxOfLit(at.story ? 340 : 250), function () { show(kind, id, true); });
+      else tree.flyTo(tree.FULL);
+      return;
+    }
     tree.flyTo(tree.boxOfLit(kind === 'story' ? 340 : 250), function () { show(kind, id, true); });
     if (narrow.matches) card.scrollIntoView({ block:'nearest', behavior: still ? 'auto' : 'smooth' });
   }

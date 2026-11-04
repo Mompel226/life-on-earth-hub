@@ -32,6 +32,13 @@ The real entry for the Classification Lab:
   status:'live', url:'https://nlcsbiology.com/classification-lab/' },
 ```
 
+Every topic also says where it lives on the tree and in which colour (4 Nov 2026, Daniel: each lab reached "from clicking
+the relevant element in the cladogram", and no two labs in one colour): `at` is `{ tree:true }`, `{ story:n }` (a step at
+the centre) or `{ groups:[ids] }`; `colour` names a `--c-<name>` of `css/hub.css`; `why` is the line on the door that the
+place's card shows. Topic 17 lives at the copier (story 4), 18 at the first cell (story 5), 19 at the plants, 20 at the
+mammals, 21 at the prokaryotes and fungi. A group whose card holds another open lab keeps its card on a click (both doors)
+instead of going straight to the Classification Lab.
+
 `detail` is only a fallback: the size shown comes from the register (`js/data/labs.js`), and
 `tools/status.mjs` fails if the two disagree. Outside this repository a new lab also needs its row
 in `labs-shared/labs.json` (the lab's own build writes its counts), its entry on the front door
