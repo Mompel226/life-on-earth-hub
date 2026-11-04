@@ -36,8 +36,9 @@ window.TOPICS = [
   { id:'inheritance',   no:17, year:'Y11', side:'l', sys:'tree', anchor:null,
     title:'Inheritance',            lab:'Inheritance Lab',
     ring:'17 · Inheritance · every branch',
-    blurb:'Chromosomes, genes and DNA; how a cell divides; and how a cross between two parents tells you what their offspring will be.',
-    status:'planned', url:null },
+    blurb:'Chromosomes, genes and DNA; how a cell divides by mitosis and by meiosis; and how a genetic diagram predicts the offspring of two parents.',
+    detail:'14 stations · 100 questions',
+    status:'live', url:'https://nlcsbiology.com/inheritance-lab/' },
 
   { id:'variation',     no:18, year:'Y11', side:'l', sys:'tree', anchor:null,
     title:'Variation and selection', lab:'Variation & Selection Lab',
