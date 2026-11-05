@@ -17,7 +17,7 @@ Start in the middle and it tells you where you come from.
 ![No sign-up](https://img.shields.io/badge/students-no_sign--up_needed-6FA287)
 ![Silhouettes CC0](https://img.shields.io/badge/silhouettes-PhyloPic_CC0-7c4dc0)
 
-by **Dr Daniel Mompel Riera** · NLCS Jeju
+by **Dr Daniel Mompel Riera**
 
 </div>
 
