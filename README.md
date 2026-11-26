@@ -21,12 +21,14 @@ by **Dr Daniel Mompel Riera**
 
 </div>
 
+![The Life on Earth Hub: the tree of life on dark water, the first cells in the middle and the kingdoms on the rim, with the card for the vent where life may have begun](docs/img/screen.jpg)
+
 ---
 
 ## 🧭 Where this sits
 
 This is one **shelf** of the [Biology Hub](https://nlcsbiology.com/biology-hub/), the front
-door to every Biology app at NLCS Jeju. A student goes front door → this shelf → a lab. The
+door to every Biology app on nlcsbiology.com. A student goes front door → this shelf → a lab. The
 other shelves are the [Human Body Hub](https://nlcsbiology.com/human-body-hub/) (topics 7,
 9–16, live), the [Plants Hub](https://nlcsbiology.com/plants-hub/) (topics 6, 8, 14.5, 16.3 and
 18.2, live) and [Foundations](https://nlcsbiology.com/foundations-hub/) (topics 2–5, live). This one covers
@@ -34,8 +36,9 @@ Topic 1, characteristics and classification, and topics 17–21: inheritance, va
 selection, organisms and their environment, human influences on ecosystems, biotechnology.
 The link at the top of the page goes back up.
 
-Behind this shelf: the **Classification Lab** (Topic 1) is live, and a group clicked on the tree opens
-it on that group — the hub introduces, the lab teaches. Five more labs are planned. Every lab links back here with one line — `docs/link-back.md` is the recipe.
+Behind this shelf: the **Classification Lab** (Topic 1) and the **Inheritance Lab** (Topic 17) are live. A group clicked on
+the tree opens the Classification Lab on that group — the hub introduces, the lab teaches; the Inheritance Lab opens from
+its topic on the ring. Four more labs are planned. Every lab links back here with one line — `docs/link-back.md` is the recipe.
 
 > [!TIP]
 > **Want your students' scores in a spreadsheet of your own?**
@@ -53,7 +56,7 @@ it on that group — the hub introduces, the lab teaches. Five more labs are pla
 | # | Topic | Lab | |
 |:--:|-------|-----|:--:|
 | 1 | Characteristics and classification of living organisms | [Classification Lab](https://nlcsbiology.com/classification-lab/) | 🟢 live |
-| 17 | Inheritance | Inheritance Lab | ⚪ planned |
+| 17 | Inheritance | [Inheritance Lab](https://nlcsbiology.com/inheritance-lab/) | 🟢 live |
 | 18 | Variation and selection | Variation & Selection Lab | ⚪ planned |
 | 19 | Organisms and their environment | Ecology Lab | ⚪ planned |
 | 20 | Human influences on ecosystems | Human Influences Lab | ⚪ planned |
