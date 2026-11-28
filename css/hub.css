@@ -12,7 +12,9 @@
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   /* one glow per kingdom, on the water */
-  --c-animals:#FF9F80;--c-plants:#8EE6A2;--c-fungi:#F6C77A;--c-protoctists:#8AD8FF;--c-prokaryotes:#C9B3FF;
+  --c-animals:#FF9F80;--c-plants:#8EE6A2;--c-fungi:#F6C77A;--c-protoctists:#8AD8FF;--c-prokaryotes:#8FA8FF;
+  /* prokaryotes glow a pale navy since 28 Nov 2026 (lavender #C9B3FF before: a violet, and violet means extension; and the
+     Classification Lab prints prokaryote words in navy #1F4E8C, so the tree and the words now share one hue) */
   --c-story:#FFD48A;--c-viruses:#C7D3DA;--c-tree:#BFE9F0;
   /* a topic's own colour where no group has one: topic 18 at the first cell (js/topics.js `colour`) */
   --c-rose:#F4A6C6;
