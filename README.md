@@ -36,9 +36,9 @@ Topic 1, characteristics and classification, and topics 17–21: inheritance, va
 selection, organisms and their environment, human influences on ecosystems, biotechnology.
 The link at the top of the page goes back up.
 
-Behind this shelf: the **Classification Lab** (Topic 1) and the **Inheritance Lab** (Topic 17) are live. A group clicked on
-the tree opens the Classification Lab on that group — the hub introduces, the lab teaches; the Inheritance Lab opens from
-its topic on the ring. Four more labs are planned. Every lab links back here with one line — `docs/link-back.md` is the recipe.
+Behind this shelf: the **Classification Lab** (Topic 1), the **Inheritance Lab** (Topic 17) and the **Variation Lab** (Topic 18) are live. A group clicked on
+the tree opens the Classification Lab on that group — the hub introduces, the lab teaches; the Inheritance and Variation Labs open from
+their topics on the ring. Three more labs are planned. Every lab links back here with one line — `docs/link-back.md` is the recipe.
 
 > [!TIP]
 > **Want your students' scores in a spreadsheet of your own?**
@@ -57,7 +57,7 @@ its topic on the ring. Four more labs are planned. Every lab links back here wit
 |:--:|-------|-----|:--:|
 | 1 | Characteristics and classification of living organisms | [Classification Lab](https://nlcsbiology.com/classification-lab/) | 🟢 live |
 | 17 | Inheritance | [Inheritance Lab](https://nlcsbiology.com/inheritance-lab/) | 🟢 live |
-| 18 | Variation and selection | Variation & Selection Lab | ⚪ planned |
+| 18 | Variation and selection | [Variation Lab](https://nlcsbiology.com/variation-lab/) | 🟢 live |
 | 19 | Organisms and their environment | Ecology Lab | ⚪ planned |
 | 20 | Human influences on ecosystems | Human Influences Lab | ⚪ planned |
 | 21 | Biotechnology and genetic modification | Biotechnology Lab | ⚪ planned |

@@ -49,10 +49,11 @@ window.TOPICS = [
 
   { id:'variation',     no:18, year:'Y11', side:'l', sys:'tree', anchor:null, at:{ story:5 }, colour:'rose',
     why:'every branch grew from the first cell: variation and natural selection made them',
-    title:'Variation and selection', lab:'Variation & Selection Lab',
+    title:'Variation and selection', lab:'Variation Lab',
     ring:'18 · Variation and selection · every branch',
-    blurb:'Why no two organisms are the same, how natural selection turns variation into adaptation, and how breeders use the same rule on crops and animals.',
-    status:'planned', url:null },
+    blurb:'What variation is and where it comes from, how natural selection turns variation into adaptation, how bacteria become resistant to antibiotics, and how breeders select crops and animals; then plot variation in R.',
+    detail:'10 stations · 90 questions',
+    status:'live', url:'https://nlcsbiology.com/variation-lab/' },
 
   { id:'ecology',       no:19, year:'Y11', side:'r', sys:'tree', anchor:null, at:{ groups:['plants'] }, colour:'plants',
     why:'plants are the producers: every food chain starts with them',
